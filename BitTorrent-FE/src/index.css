@@ -1,0 +1,29 @@
+@import '~antd/dist/antd.css';
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body > #root {
+  height: 100%;
+}
+
+.ant-layout-header {
+  padding: 0;
+}
+
+.btn-green {
+  color: #0aa679;
+  border: 1px solid #0aa679;
+}
+
+.btn-green:hover,
+.btn-green:focus {
+  color: #1bb78a;
+  border: 1px solid #1bb78a;
+}
