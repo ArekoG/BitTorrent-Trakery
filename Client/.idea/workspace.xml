@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d3fbabf6-b2ac-4a8a-8a8c-14cdd3081f1b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../BitTorrent-BE/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/BitTorrent-FE.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/sonarlint/issuestore/1/3/1362104e015a445f49fb27974d5fd852d08dabfb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/sonarlint/issuestore/8/9/89b6570c0f5812e0ace68d749e3b163fdcd35426" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/sonarlint/issuestore/9/f/9fa643e2c4f97bf55775a42c2f26c1cbb02aaaa1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/encodings.xml" />
+        <option value="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/.idea/resources.iml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectId" id="1sP2TbpApS5DoVFR9L47icQQyPD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="psk.sob.service" />
+      <recent name="psk.sob.repository" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alfu\IdeaProjects\BitTorrent-Trakery\Client\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="psk.sob.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="psk.sob.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d3fbabf6-b2ac-4a8a-8a8c-14cdd3081f1b" name="Default Changelist" comment="" />
+      <created>1620750570153</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620750570153</updated>
+      <workItem from="1620750572686" duration="7988000" />
+      <workItem from="1620759914209" duration="599000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>final Map&lt;String, Integer&gt; variables = new HashMap&lt;&gt;();
+            variables.put(&quot;trackerId&quot;,tracker.getId());
+            variables.put(&quot;userId&quot;,userId);
+
+            restTemplate.postForObject(&quot;http://localhost:8080/bit-torrent/trackers/{trackerId}/users/{userId}/enabled&quot;,Void.class,Object.class,variables);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Integer userId = tracker.getTrackerUsersList()
+                    .stream()
+                    .filter(trackerUsersList -&gt; !trackerUsersList.equals(login))
+                    .map(TrackerUsersList::getUser)
+                    .map(User::getId)
+                    .findFirst().get();
+            final Map&lt;String, Integer&gt; variables = new HashMap&lt;&gt;();
+            variables.put(&quot;trackerId&quot;,tracker.getId());
+            variables.put(&quot;userId&quot;,userId);
+
+            restTemplate.postForObject(&quot;http://localhost:8080/bit-torrent/trackers/{trackerId}/users/{userId}/enabled&quot;,Void.class,Object.class,variables);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(&quot;http://localhost:8080/bit-torrent/trackers/{trackerId}/users/{userId}/enabled&quot;)
+                    .queryParam(&quot;trackerId&quot;,tracker.getId())
+                    .queryParam(&quot;userId&quot;,userId);
+            restTemplate.postForObject(builder.toUriString(),Void.class,Object.class);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>UriComponents build = UriComponentsBuilder.fromHttpUrl(&quot;http://localhost:8080/bit-torrent/trackers/1/users/1/enabled&quot;).build();
+restTemplate.postForObject(build.toUriString(),Void.class,Object.class);</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>org.springframework.web.util.UriComponents</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>UriComponents build = UriComponentsBuilder.fromHttpUrl(&quot;http://localhost:8080/bit-torrent/trackers/1/users/1/enabled&quot;).build();
+restTemplate.postForObject(build.toUriString(),Void.class,null);</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>org.springframework.web.util.UriComponents</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>UriComponents build = UriComponentsBuilder.fromHttpUrl(&quot;localhost:8080/bit-torrent/trackers/1/users/1/enabled&quot;).build();
+restTemplate.postForObject(build.toUriString(),Void.class,null);</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>org.springframework.web.util.UriComponents</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(&quot;localhost:8080/bit-torrent/trackers/{trackerId}/users/{userId}/enabled&quot;)
+                    .queryParam(&quot;trackerId&quot;,tracker.getId())
+                    .queryParam(&quot;userId&quot;,userId);
+            restTemplate.postForObject(builder.toUriString(),Void.class,null);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>tracker.getTrackerUsersList()
+                    .stream()
+                    .filter(trackerUsersList -&gt; !trackerUsersList.equals(login))
+                    .map(TrackerUsersList::getUser)
+                    .map(User::getId)
+                    .findFirst().get();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>tracker.getTrackerUsersList()
+                    .stream()
+                    .filter(trackerUsersList -&gt; !trackerUsersList.equals(login))
+                    .map(TrackerUsersList::getUser)
+                    .findFirst()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>tracker.getTrackerUsersList()
+                    .stream()
+                    .filter(trackerUsersList -&gt; trackerUsersList.equals(login))
+                    .map(TrackerUsersList::getUser)
+                    .map(User::getId)
+                    .findFirst().get();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>trackerRepository.findAllByLoginAndStatus(&quot;user1&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>trackerRepository.findAllByLoginAndStatus(&quot;user2&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>trackerRepository.findAllByLoginAndStatus(login)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>trackerRepository.findAllByLoginAndStatus(&quot;enable&quot;,login);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>trackerRepository.findIdByStatusAndUsersList_Login(&quot;enable&quot;,login)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>trackerRepository.findByStatusAndUsersList_Login(&quot;enable&quot;,login)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>trackerRepository.findByUsersList_Login(login)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>trackerRepository.findByUsersList_Login()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Client</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
