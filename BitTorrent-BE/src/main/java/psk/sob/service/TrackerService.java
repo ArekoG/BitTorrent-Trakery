@@ -6,8 +6,8 @@ import psk.sob.dto.File;
 import psk.sob.dto.Tracker;
 import psk.sob.dto.User;
 import psk.sob.entity.TrackerUsersList;
-import psk.sob.repository.TrackerRepository;
-import psk.sob.repository.TrackerUserListRepository;
+import psk.sob.entity.repository.TrackerRepository;
+import psk.sob.entity.repository.TrackerUserListRepository;
 
 import java.util.ArrayList;
 import java.util.List;

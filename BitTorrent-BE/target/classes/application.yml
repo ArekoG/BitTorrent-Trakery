@@ -7,7 +7,7 @@ spring:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
   datasource:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/postgres?charSet=UTF8&currentSchema=torrent

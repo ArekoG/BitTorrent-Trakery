@@ -2,19 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3fbabf6-b2ac-4a8a-8a8c-14cdd3081f1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../BitTorrent-BE/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/BitTorrent-FE.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/sonarlint/issuestore/1/3/1362104e015a445f49fb27974d5fd852d08dabfb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/sonarlint/issuestore/8/9/89b6570c0f5812e0ace68d749e3b163fdcd35426" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/sonarlint/issuestore/9/f/9fa643e2c4f97bf55775a42c2f26c1cbb02aaaa1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-FE/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/psk/sob/entity/repository/TrackerUserListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/psk/sob/entity/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/2/d/2dc706ff42f5a3e1c26cfb88d19fdc6bc87c6727" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/2/d/2dc706ff42f5a3e1c26cfb88d19fdc6bc87c6727" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/6/c/6cce1891ef6acb8dc136f787fe2d78ef668c7da1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/7/e/7e90dee446e6036840aaef50087106c2c69ae49a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/e/c/ec5891e5e5c906bdc99b8b78b1526c55c1530db9" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/e/c/ec5891e5e5c906bdc99b8b78b1526c55c1530db9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/f/f/ffd2f8d63fcbb01622926fb12e302284309ad29a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/repository/TrackerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/entity/repository/TrackerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/repository/TrackerUserListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/entity/repository/TrackerUserListRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/entity/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/scheduled/PingUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/scheduled/PingUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/service/TrackerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/service/TrackerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/controller/TrackerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/controller/TrackerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Tracker$TrackerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Tracker$TrackerBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Tracker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Tracker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/repository/TrackerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/repository/TrackerUserListRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/scheduled/PingUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/scheduled/PingUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/service/TrackerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/service/TrackerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/psk/sob/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/repository/TrackerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/psk/sob/entity/repository/TrackerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/repository/TrackerUserListRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/service/TrackerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/psk/sob/service/TrackerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/psk/sob/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/controller/TestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/repository/TrackerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/repository/TrackerUserListRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/service/TrackerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/psk/sob/service/TrackerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/psk/sob/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +108,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/psk/sob" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -96,6 +122,7 @@
       <recent name="psk.sob.repository" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\BitTorrent-Trakery\Client\src\main\java\psk\sob" />
       <recent name="C:\Users\Alfu\IdeaProjects\BitTorrent-Trakery\Client\src\main\resources" />
     </key>
   </component>
@@ -137,141 +164,63 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateCodeFragment">
-      <expression>
-        <expression-string>final Map&lt;String, Integer&gt; variables = new HashMap&lt;&gt;();
-            variables.put(&quot;trackerId&quot;,tracker.getId());
-            variables.put(&quot;userId&quot;,userId);
-
-            restTemplate.postForObject(&quot;http://localhost:8080/bit-torrent/trackers/{trackerId}/users/{userId}/enabled&quot;,Void.class,Object.class,variables);</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Integer userId = tracker.getTrackerUsersList()
-                    .stream()
-                    .filter(trackerUsersList -&gt; !trackerUsersList.equals(login))
-                    .map(TrackerUsersList::getUser)
-                    .map(User::getId)
-                    .findFirst().get();
-            final Map&lt;String, Integer&gt; variables = new HashMap&lt;&gt;();
-            variables.put(&quot;trackerId&quot;,tracker.getId());
-            variables.put(&quot;userId&quot;,userId);
-
-            restTemplate.postForObject(&quot;http://localhost:8080/bit-torrent/trackers/{trackerId}/users/{userId}/enabled&quot;,Void.class,Object.class,variables);</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(&quot;http://localhost:8080/bit-torrent/trackers/{trackerId}/users/{userId}/enabled&quot;)
-                    .queryParam(&quot;trackerId&quot;,tracker.getId())
-                    .queryParam(&quot;userId&quot;,userId);
-            restTemplate.postForObject(builder.toUriString(),Void.class,Object.class);</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>UriComponents build = UriComponentsBuilder.fromHttpUrl(&quot;http://localhost:8080/bit-torrent/trackers/1/users/1/enabled&quot;).build();
-restTemplate.postForObject(build.toUriString(),Void.class,Object.class);</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>org.springframework.web.util.UriComponents</custom-info>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>UriComponents build = UriComponentsBuilder.fromHttpUrl(&quot;http://localhost:8080/bit-torrent/trackers/1/users/1/enabled&quot;).build();
-restTemplate.postForObject(build.toUriString(),Void.class,null);</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>org.springframework.web.util.UriComponents</custom-info>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>UriComponents build = UriComponentsBuilder.fromHttpUrl(&quot;localhost:8080/bit-torrent/trackers/1/users/1/enabled&quot;).build();
-restTemplate.postForObject(build.toUriString(),Void.class,null);</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>org.springframework.web.util.UriComponents</custom-info>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(&quot;localhost:8080/bit-torrent/trackers/{trackerId}/users/{userId}/enabled&quot;)
-                    .queryParam(&quot;trackerId&quot;,tracker.getId())
-                    .queryParam(&quot;userId&quot;,userId);
-            restTemplate.postForObject(builder.toUriString(),Void.class,null);</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>tracker.getTrackerUsersList()
-                    .stream()
-                    .filter(trackerUsersList -&gt; !trackerUsersList.equals(login))
-                    .map(TrackerUsersList::getUser)
-                    .map(User::getId)
-                    .findFirst().get();</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>tracker.getTrackerUsersList()
-                    .stream()
-                    .filter(trackerUsersList -&gt; !trackerUsersList.equals(login))
-                    .map(TrackerUsersList::getUser)
-                    .findFirst()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>tracker.getTrackerUsersList()
-                    .stream()
-                    .filter(trackerUsersList -&gt; trackerUsersList.equals(login))
-                    .map(TrackerUsersList::getUser)
-                    .map(User::getId)
-                    .findFirst().get();</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>trackerRepository.findAllByLoginAndStatus(&quot;user1&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>trackerRepository.findAllByLoginAndStatus(&quot;user2&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>trackerRepository.findAllByLoginAndStatus(login)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>trackerRepository.findAllByLoginAndStatus(&quot;enable&quot;,login);</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>trackerRepository.findIdByStatusAndUsersList_Login(&quot;enable&quot;,login)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>trackerRepository.findByStatusAndUsersList_Login(&quot;enable&quot;,login)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>trackerRepository.findByUsersList_Login(login)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>trackerRepository.findByUsersList_Login()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
+  <component name="WindowStateProjectService">
+    <state x="2805" y="364" width="908" height="586" key="#xdebugger.evaluate" timestamp="1620772107827">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2805" y="364" width="908" height="586" key="#xdebugger.evaluate/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772107827" />
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1620772756783">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772756783" />
+    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1620772756783">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.0.center/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772756783" />
+    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1620772756783">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.0.left/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772756783" />
+    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1620772756783">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.0.right/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772756783" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1620772576973">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772576973" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1620772576973">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.center/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772576973" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1620772576973">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.left/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772576973" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1620772576973">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.right/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772576973" />
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1620772076458">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772076458" />
+    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1620772076458">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.2.center/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772076458" />
+    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1620772076458">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.2.left/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772076458" />
+    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1620772076458">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.2.right/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772076458" />
+    <state x="2613" y="255" width="585" height="530" key="find.popup" timestamp="1620771341238">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2613" y="255" width="585" height="530" key="find.popup/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620771341238" />
   </component>
   <component name="masterDetails">
     <states>
