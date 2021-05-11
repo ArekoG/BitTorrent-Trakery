@@ -6,6 +6,7 @@ export interface User {
   id: string;
   status: boolean;
   files: number;
+  trackers: number;
 }
 
 export interface UserState {

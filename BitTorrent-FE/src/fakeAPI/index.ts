@@ -25,6 +25,29 @@ export function fetchTracers() {
   );
 }
 
+export function fetchAllUsers() {
+  return new Promise<{ data: Tracker[] }>((resolve) =>
+    setTimeout(
+      () =>
+        resolve({
+          data: [
+            {
+              id: '1',
+              status: true,
+              users: 2,
+            },
+            {
+              id: '2',
+              status: false,
+              users: 2,
+            },
+          ],
+        }),
+      500,
+    ),
+  );
+}
+
 export function fetchFiles() {
   return new Promise<{ data: File[] }>((resolve) =>
     setTimeout(
@@ -60,11 +83,13 @@ export function fetchUsers() {
               id: '1',
               status: true,
               files: 2,
+              trackers: 1,
             },
             {
               id: '2',
               status: false,
               files: 2,
+              trackers: 2,
             },
           ],
         }),
