@@ -29,6 +29,11 @@ public class ClientController {
         userService.disableUser(login);
     }
 
+    @PostMapping("/trackers/{trackerId}/users/{login}/assign")
+    public void assignUser(@PathVariable int trackerId, @PathVariable String login) {
+        userService.assignUserToTheTracker(trackerId, login);
+    }
+
     @PostMapping("/users/{userId}/is-alive")
     public ResponseEntity isUserAlive(@PathVariable int userId) {
         return userService.isUserAlive(userId);
