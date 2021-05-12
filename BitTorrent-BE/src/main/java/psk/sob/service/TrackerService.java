@@ -6,20 +6,39 @@ import psk.sob.dto.File;
 import psk.sob.dto.Tracker;
 import psk.sob.dto.User;
 import psk.sob.entity.TrackerUsersList;
-import psk.sob.repository.TrackerUserListRepository;
+import psk.sob.entity.repository.TrackerRepository;
+import psk.sob.entity.repository.TrackerUserListRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class TrackerService {
     private TrackerUserListRepository trackerUserListRepository;
+    private TrackerRepository trackerRepository;
+
     public List<Tracker> getTrackers() {
-        return null;
+        List<Tracker> trackerListAfterMapping = new ArrayList<>();
+        List<psk.sob.entity.Tracker> trackerList = trackerRepository.findAll();
+        trackerList.forEach(i -> trackerListAfterMapping.add(
+                Tracker.builder()
+                        .trackerId(i.getId())
+                        .trackerName(i.getName())
+                        .trackerStatus(i.getStatus())
+                        .numberOfUsers(trackerUserListRepository.findAllByTrackerId(i.getId()).size()).build()));
+        return trackerListAfterMapping;
     }
 
-    public List<User> getUsersInTracker(String trackerId) {
-        return null;
+    public List<User> getUsersInTracker(int trackerId) {
+        List<User> trackesUsersListAfterMapping = new ArrayList<>();
+        List<TrackerUsersList> trackerUsersList = trackerUserListRepository.findAllByTrackerId(trackerId);
+        trackerUsersList.forEach(i -> trackesUsersListAfterMapping.add(
+                User.builder()
+                        .userId(i.getId())
+                        .userStatus(i.getStatus())
+                        .build()));
+        return trackesUsersListAfterMapping;
     }
 
     public List<File> getFilesInTracker(String trackerId) {
@@ -30,5 +49,6 @@ public class TrackerService {
         TrackerUsersList trackerIdAndUserId = trackerUserListRepository.findByTrackerIdAndUserId(trackerId, userId);
         trackerIdAndUserId.setStatus("enable");
         trackerUserListRepository.save(trackerIdAndUserId);
+
     }
 }

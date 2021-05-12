@@ -8,7 +8,8 @@ import java.util.List;
 @Value
 @Builder
 public class Tracker {
-    private String id;
-    private Status trackerStatus;
-    private List<User> users;
+    private int trackerId;
+    private String trackerName;
+    private String trackerStatus;
+    private int numberOfUsers;
 }

@@ -23,7 +23,7 @@ public class TrackerController {
     }
 
     @GetMapping("/trackers/{trackerId}/users")
-    private List<User> getUsersInTracker(@PathVariable String trackerId) {
+    private List<User> getUsersInTracker(@PathVariable int trackerId) {
         return trackerService.getUsersInTracker(trackerId);
     }
 
