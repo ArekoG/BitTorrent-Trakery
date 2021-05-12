@@ -1,10 +1,7 @@
 package psk.sob.controller;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import psk.sob.dto.File;
 import psk.sob.dto.User;
 import psk.sob.service.UserService;
@@ -27,5 +24,14 @@ public class UserController {
         return userService.getFiles(userId);
     }
 
+    @PostMapping("/users/{userId}/enable")
+    public void enableUser(@PathVariable int userId) {
+        userService.enableUser(userId);
+    }
+
+    @PostMapping("/users/{userId}/disable")
+    public void disableUser(@PathVariable int userId) {
+        userService.disableUser(userId);
+    }
 
 }

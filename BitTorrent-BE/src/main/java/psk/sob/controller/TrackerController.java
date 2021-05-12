@@ -2,7 +2,6 @@ package psk.sob.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import psk.sob.dto.File;
 import psk.sob.dto.Tracker;
 import psk.sob.dto.User;
 import psk.sob.service.TrackerService;
@@ -28,7 +27,16 @@ public class TrackerController {
 
     @PostMapping("/trackers/{trackerId}/users/{userId}/enabled")
     public void enableUserOnTracker(@PathVariable int trackerId, @PathVariable int userId) {
-        trackerService.enableUserOnTracker(trackerId,userId);
+        trackerService.enableUserOnTracker(trackerId, userId);
     }
 
+    @PostMapping("/trackers/{trackerId}/enable")
+    public void enableTracker(@PathVariable int trackerId) {
+        trackerService.enableTracker(trackerId);
+    }
+
+    @PostMapping("/trackers/{trackerId}/disable")
+    public void disableTracker(@PathVariable int trackerId) {
+        trackerService.disableTracker(trackerId);
+    }
 }

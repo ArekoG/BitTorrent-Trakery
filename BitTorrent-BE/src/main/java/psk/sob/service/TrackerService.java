@@ -2,6 +2,7 @@ package psk.sob.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import psk.sob.dto.File;
 import psk.sob.dto.Tracker;
 import psk.sob.dto.User;
@@ -37,6 +38,7 @@ public class TrackerService {
                 User.builder()
                         .userId(i.getId())
                         .userStatus(i.getStatus())
+                        .userLogin(i.getUser().getLogin())
                         .build()));
         return trackesUsersListAfterMapping;
     }
@@ -50,5 +52,20 @@ public class TrackerService {
         trackerIdAndUserId.setStatus("enable");
         trackerUserListRepository.save(trackerIdAndUserId);
 
+    }
+
+    @Transactional
+    public void enableTracker(int trackerId) {
+        psk.sob.entity.Tracker tracker = trackerRepository.findById(trackerId)
+                .orElseThrow(RuntimeException::new);
+        tracker.setStatus("enable");
+        trackerRepository.save(tracker);
+    }
+    @Transactional
+    public void disableTracker(int trackerId) {
+        psk.sob.entity.Tracker tracker = trackerRepository.findById(trackerId)
+                .orElseThrow(RuntimeException::new);
+        tracker.setStatus("disable");
+        trackerRepository.save(tracker);
     }
 }

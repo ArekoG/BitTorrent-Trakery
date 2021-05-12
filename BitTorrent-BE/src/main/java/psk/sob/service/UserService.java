@@ -2,6 +2,7 @@ package psk.sob.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import psk.sob.dto.File;
 import psk.sob.dto.User;
 import psk.sob.entity.repository.UserRepository;
@@ -28,5 +29,19 @@ public class UserService {
                         .userLogin(i.getLogin())
                         .build()));
         return userListAfterMapping;
+    }
+    @Transactional
+    public void enableUser(int userId) {
+        psk.sob.entity.User user = userRepository.findById(userId)
+                .orElseThrow(RuntimeException::new);
+        user.setStatus("enable");
+        userRepository.save(user);
+    }
+    @Transactional
+    public void disableUser(int userId) {
+        psk.sob.entity.User user = userRepository.findById(userId)
+                .orElseThrow(RuntimeException::new);
+        user.setStatus("disable");
+        userRepository.save(user);
     }
 }
