@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import fakeAPI from 'fakeAPI';
+import api from 'api';
 import { RootState } from './store';
 
 export interface User {
-  id: string;
-  status: boolean;
-  files: number;
+  userId: string;
+  userLogin: string;
+  userStatus: 'enable' | 'disable';
 }
 
 export interface UserState {
@@ -18,10 +19,18 @@ const initialState: UserState = {
   isLoading: false,
 };
 
-export const fetchUsers = createAsyncThunk('tracker/fetchUsers', async () => {
-  const { data } = await fakeAPI.fetchUsers();
+export const fetchAllUsers = createAsyncThunk('tracker/fetchAllUsers', async () => {
+  const result = await api.get('/users');
+  // const result = await fakeAPI.fetchAllUsers();
 
-  return data;
+  return result.data;
+});
+
+export const fetchUsers = createAsyncThunk('tracker/fetchUsers', async (trackerId: string) => {
+  const result = await api.get(`/trackers/${trackerId}/users`);
+  // const result = await fakeAPI.fetchUsers();
+
+  return result.data;
 });
 
 export const activateUser = createAsyncThunk('users/activateUser', async (trackerId: string) => {
@@ -43,8 +52,23 @@ export const usersSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(fetchAllUsers.pending, (state) => {
+        state.isLoading = true;
+        state.data = [];
+      })
+      .addCase(fetchAllUsers.rejected, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(fetchAllUsers.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.data = action.payload;
+      })
       .addCase(fetchUsers.pending, (state) => {
         state.isLoading = true;
+        state.data = [];
+      })
+      .addCase(fetchUsers.rejected, (state) => {
+        state.isLoading = false;
       })
       .addCase(fetchUsers.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -53,19 +77,25 @@ export const usersSlice = createSlice({
       .addCase(activateUser.pending, (state) => {
         state.isLoading = true;
       })
+      .addCase(activateUser.rejected, (state) => {
+        state.isLoading = false;
+      })
       .addCase(activateUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.data = state.data.map((value) =>
-          value.id === action.payload ? { ...value, status: true } : value,
+          value.userId === action.payload ? { ...value, userStatus: 'enable' } : value,
         );
       })
       .addCase(deactivateUser.pending, (state) => {
         state.isLoading = true;
       })
+      .addCase(deactivateUser.rejected, (state) => {
+        state.isLoading = false;
+      })
       .addCase(deactivateUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.data = state.data.map((value) =>
-          value.id === action.payload ? { ...value, status: false } : value,
+          value.userId === action.payload ? { ...value, userStatus: 'disable' } : value,
         );
       });
   },

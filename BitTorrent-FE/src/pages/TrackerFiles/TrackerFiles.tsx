@@ -30,7 +30,7 @@ function TrackerFiles() {
     },
     {
       title: 'Liczba kopii pliku',
-      key: 'size',
+      key: 'numberOfCopies',
       render: (text: string, record: any) => {
         return record.users.length;
       },

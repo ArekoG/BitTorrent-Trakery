@@ -1,35 +1,45 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Space, Table, Tag } from 'antd';
-import { FolderOutlined, PoweroffOutlined, TeamOutlined } from '@ant-design/icons';
+import { Button, Card, Space, Table, Tag } from 'antd';
+import { PoweroffOutlined, TeamOutlined } from '@ant-design/icons';
+// import { FolderOutlined } from '@ant-design/icons';
 import {
   getTrackers,
   fetchTrackers,
   activateTracker,
   deactivateTracker,
 } from 'redux/trackersSlice';
+import { getUsers, fetchAllUsers, activateUser, deactivateUser } from 'redux/usersSlice';
 import paths from 'routes/paths';
 
 function Trackers() {
-  const { isLoading, data: dataSource } = useSelector(getTrackers);
+  const { isLoading: isLoadingTrackers, data: dataTrackers } = useSelector(getTrackers);
+  const { isLoading: isLoadingUsers, data: dataUsers } = useSelector(getUsers);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchTrackers());
+    dispatch(fetchAllUsers());
   }, [dispatch]);
 
-  const columns = [
+  const columnsTackers = [
     {
       title: 'id',
-      key: 'id',
-      dataIndex: 'id',
+      key: 'trackerId',
+      dataIndex: 'trackerId',
+    },
+    {
+      title: 'Nazwa',
+      key: 'trackerName',
+      dataIndex: 'trackerName',
     },
     {
       title: 'Status',
-      key: 'status',
-      dataIndex: 'status',
-      render: (status: boolean) => {
+      key: 'trackerStatus',
+      dataIndex: 'trackerStatus',
+      render: (trackerStatus: string) => {
+        const status = trackerStatus === 'enable';
         const color = status ? 'green' : 'red';
         return (
           <Tag color={color} key={status.toString()}>
@@ -40,27 +50,28 @@ function Trackers() {
     },
     {
       title: 'Liczba użytkowników',
-      key: 'users',
-      dataIndex: 'users',
+      key: 'numberOfUsers',
+      dataIndex: 'numberOfUsers',
     },
     {
       title: 'Akcje',
       key: 'action',
       width: '35%',
       render: (text: string, record: any) => {
+        const status = record.trackerStatus === 'enable';
         return (
           <Space size={[12, 12]} wrap>
-            <Link to={paths.trackerFiles.replace(':id', record.id)}>
+            {/* <Link to={paths.trackerFiles.replace(':id', record.id)}>
               <Button icon={<FolderOutlined />}>pliki</Button>
-            </Link>
-            <Link to={paths.trackerUsers.replace(':id', record.id)}>
+            </Link> */}
+            <Link to={paths.trackerUsers.replace(':id', record.trackerId)}>
               <Button icon={<TeamOutlined />}>użytkownicy</Button>
             </Link>
-            {record.status ? (
+            {status ? (
               <Button
                 danger
                 icon={<PoweroffOutlined />}
-                onClick={() => dispatch(deactivateTracker(record.id))}
+                onClick={() => dispatch(deactivateTracker(record.trackerId))}
               >
                 dezaktywuj
               </Button>
@@ -68,7 +79,67 @@ function Trackers() {
               <Button
                 className="btn-green"
                 icon={<PoweroffOutlined />}
-                onClick={() => dispatch(activateTracker(record.id))}
+                onClick={() => dispatch(activateTracker(record.trackerId))}
+              >
+                aktywuj
+              </Button>
+            )}
+          </Space>
+        );
+      },
+    },
+  ];
+
+  const columnsUsers = [
+    {
+      title: 'id',
+      key: 'userId',
+      dataIndex: 'userId',
+    },
+    {
+      title: 'login',
+      key: 'userLogin',
+      dataIndex: 'userLogin',
+    },
+    {
+      title: 'Status',
+      key: 'userStatus',
+      dataIndex: 'userStatus',
+      render: (userStatus: string) => {
+        const status = userStatus === 'enable';
+        const color = status ? 'green' : 'red';
+        return (
+          <Tag color={color} key={status.toString()}>
+            {status ? 'aktywny' : 'nieaktywny'}
+          </Tag>
+        );
+      },
+    },
+    {
+      title: 'Akcje',
+      key: 'action',
+      render: (text: string, record: any) => {
+        const status = record.userStatus === 'enable';
+        return (
+          <Space size={[12, 12]} wrap>
+            {/* <Link
+              to={paths.userFiles.replace(':trackerId', trackerId).replace(':userId', record.id)}
+            >
+              <Button icon={<FolderOutlined />}>pliki</Button>
+            </Link> */}
+            {status ? (
+              <Button
+                danger
+                icon={<PoweroffOutlined />}
+                onClick={() => dispatch(deactivateUser(record.userId))}
+              >
+                dezaktywuj
+              </Button>
+            ) : (
+              <Button
+                className="btn-green"
+                icon={<PoweroffOutlined />}
+                onClick={() => dispatch(activateUser(record.userId))}
               >
                 aktywuj
               </Button>
@@ -80,14 +151,28 @@ function Trackers() {
   ];
 
   return (
-    <Table
-      loading={isLoading}
-      dataSource={dataSource}
-      rowKey="id"
-      columns={columns}
-      pagination={false}
-      tableLayout="fixed"
-    />
+    <Space direction="vertical" size="large">
+      <Card title="Lista trackerów">
+        <Table
+          loading={isLoadingTrackers}
+          dataSource={dataTrackers}
+          rowKey="trackerId"
+          columns={columnsTackers}
+          pagination={false}
+          tableLayout="fixed"
+        />
+      </Card>
+      <Card title="Lista użytkowników">
+        <Table
+          loading={isLoadingUsers}
+          dataSource={dataUsers}
+          rowKey="trackerId"
+          columns={columnsUsers}
+          pagination={false}
+          tableLayout="fixed"
+        />
+      </Card>
+    </Space>
   );
 }
 

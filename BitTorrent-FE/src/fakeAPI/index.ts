@@ -9,14 +9,22 @@ export function fetchTracers() {
         resolve({
           data: [
             {
-              id: '1',
-              status: true,
-              users: 2,
+              trackerId: '1',
+              trackerName: 'Tracker1',
+              trackerStatus: 'enable',
+              numberOfUsers: 2,
             },
             {
-              id: '2',
-              status: false,
-              users: 2,
+              trackerId: '2',
+              trackerName: 'Tracker2',
+              trackerStatus: 'disable',
+              numberOfUsers: 2,
+            },
+            {
+              trackerId: '3',
+              trackerName: 'Tracker3',
+              trackerStatus: 'enable',
+              numberOfUsers: 2,
             },
           ],
         }),
@@ -57,14 +65,82 @@ export function fetchUsers() {
         resolve({
           data: [
             {
-              id: '1',
-              status: true,
-              files: 2,
+              userId: '1',
+              userLogin: 'user1',
+              userStatus: 'enable',
             },
             {
-              id: '2',
-              status: false,
-              files: 2,
+              userId: '2',
+              userLogin: 'user2',
+              userStatus: 'enable',
+            },
+          ],
+        }),
+      500,
+    ),
+  );
+}
+
+export function fetchAllUsers() {
+  return new Promise<{ data: User[] }>((resolve) =>
+    setTimeout(
+      () =>
+        resolve({
+          data: [
+            {
+              userId: '1',
+              userLogin: 'user1',
+              userStatus: 'enable',
+            },
+            {
+              userId: '2',
+              userLogin: 'user2',
+              userStatus: 'enable',
+            },
+            {
+              userId: '3',
+              userLogin: 'user3',
+              userStatus: 'disable',
+            },
+            {
+              userId: '4',
+              userLogin: 'user4',
+              userStatus: 'enable',
+            },
+            {
+              userId: '5',
+              userLogin: 'user5',
+              userStatus: 'enable',
+            },
+            {
+              userId: '6',
+              userLogin: 'user6',
+              userStatus: 'enable',
+            },
+            {
+              userId: '7',
+              userLogin: 'user7',
+              userStatus: 'enable',
+            },
+            {
+              userId: '8',
+              userLogin: 'user8',
+              userStatus: 'disable',
+            },
+            {
+              userId: '9',
+              userLogin: 'user9',
+              userStatus: 'enable',
+            },
+            {
+              userId: '10',
+              userLogin: 'user10',
+              userStatus: 'disable',
+            },
+            {
+              userId: '11',
+              userLogin: 'user11',
+              userStatus: 'enable',
             },
           ],
         }),
@@ -80,6 +156,7 @@ export function toggleStatusById(id: string) {
 const fakeAPI = {
   fetchTracers,
   fetchFiles,
+  fetchAllUsers,
   fetchUsers,
   toggleStatusById,
 };

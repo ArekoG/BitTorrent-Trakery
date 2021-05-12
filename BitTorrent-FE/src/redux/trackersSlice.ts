@@ -1,11 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import fakeAPI from 'fakeAPI';
+import api from 'api';
 import { RootState } from './store';
 
 export interface Tracker {
-  id: string;
-  status: boolean;
-  users: number;
+  trackerId: string;
+  trackerName: string;
+  trackerStatus: 'enable' | 'disable';
+  numberOfUsers: number;
 }
 
 export interface TrackerState {
@@ -19,9 +21,10 @@ const initialState: TrackerState = {
 };
 
 export const fetchTrackers = createAsyncThunk('trackers/fetchTracers', async () => {
-  const { data } = await fakeAPI.fetchTracers();
+  const result = await api.get('/trackers');
+  // const result = await fakeAPI.fetchTracers();
 
-  return data;
+  return result.data;
 });
 
 export const activateTracker = createAsyncThunk(
@@ -49,6 +52,9 @@ export const trackersSlice = createSlice({
       .addCase(fetchTrackers.pending, (state) => {
         state.isLoading = true;
       })
+      .addCase(fetchTrackers.rejected, (state) => {
+        state.isLoading = false;
+      })
       .addCase(fetchTrackers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.data = action.payload;
@@ -56,19 +62,25 @@ export const trackersSlice = createSlice({
       .addCase(activateTracker.pending, (state) => {
         state.isLoading = true;
       })
+      .addCase(activateTracker.rejected, (state) => {
+        state.isLoading = false;
+      })
       .addCase(activateTracker.fulfilled, (state, action) => {
         state.isLoading = false;
         state.data = state.data.map((value) =>
-          value.id === action.payload ? { ...value, status: true } : value,
+          value.trackerId === action.payload ? { ...value, trackerStatus: 'enable' } : value,
         );
       })
       .addCase(deactivateTracker.pending, (state) => {
         state.isLoading = true;
       })
+      .addCase(deactivateTracker.rejected, (state) => {
+        state.isLoading = false;
+      })
       .addCase(deactivateTracker.fulfilled, (state, action) => {
         state.isLoading = false;
         state.data = state.data.map((value) =>
-          value.id === action.payload ? { ...value, status: false } : value,
+          value.trackerId === action.payload ? { ...value, trackerStatus: 'disable' } : value,
         );
       });
   },

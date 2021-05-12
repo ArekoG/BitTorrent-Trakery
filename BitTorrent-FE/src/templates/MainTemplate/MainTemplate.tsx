@@ -8,7 +8,7 @@ function MainTemplate({ children }: any) {
   const { pathname } = useLocation();
 
   return (
-    <Layout className={styles.layout}>
+    <Layout className={styles.layout} style={{ minHeight: '100%' }}>
       <Header>
         <div className={styles.container}>
           <Link to="/">
@@ -17,7 +17,7 @@ function MainTemplate({ children }: any) {
         </div>
       </Header>
       <Content className={styles.container}>
-        <Breadcrumb style={{ margin: '24px 0' }}>
+        <Breadcrumb style={{ margin: '24px 0 12px 0' }}>
           <Breadcrumb.Item>
             <HomeOutlined />
           </Breadcrumb.Item>

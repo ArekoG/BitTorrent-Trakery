@@ -1,10 +1,8 @@
 import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Space, Table, Tag } from 'antd';
-import { FolderOutlined, PoweroffOutlined } from '@ant-design/icons';
-import { getUsers, fetchUsers, activateUser, deactivateUser } from 'redux/usersSlice';
-import paths from 'routes/paths';
+import { Card, Space, Table, Tag } from 'antd';
+import { getUsers, fetchUsers } from 'redux/usersSlice';
 
 type Params = {
   id: string;
@@ -16,20 +14,26 @@ function TrackerUserList() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
+    dispatch(fetchUsers(trackerId));
+  }, [dispatch, trackerId]);
 
   const columns = [
     {
       title: 'id',
-      key: 'id',
-      dataIndex: 'id',
+      key: 'userId',
+      dataIndex: 'userId',
     },
     {
-      title: 'Status',
-      key: 'status',
-      dataIndex: 'status',
-      render: (status: boolean) => {
+      title: 'login',
+      key: 'userLogin',
+      dataIndex: 'userLogin',
+    },
+    {
+      title: 'Status w trackerze',
+      key: 'userStatus',
+      dataIndex: 'userStatus',
+      render: (userStatus: string) => {
+        const status = userStatus === 'enable';
         const color = status ? 'green' : 'red';
         return (
           <Tag color={color} key={status.toString()}>
@@ -38,54 +42,21 @@ function TrackerUserList() {
         );
       },
     },
-    {
-      title: 'Liczba plików',
-      key: 'files',
-      dataIndex: 'files',
-    },
-    {
-      title: 'Akcje',
-      key: 'action',
-      render: (text: string, record: any) => {
-        return (
-          <Space size={[12, 12]} wrap>
-            <Link
-              to={paths.userFiles.replace(':trackerId', trackerId).replace(':userId', record.id)}
-            >
-              <Button icon={<FolderOutlined />}>pliki</Button>
-            </Link>
-            {record.status ? (
-              <Button
-                danger
-                icon={<PoweroffOutlined />}
-                onClick={() => dispatch(deactivateUser(record.id))}
-              >
-                dezaktywuj
-              </Button>
-            ) : (
-              <Button
-                className="btn-green"
-                icon={<PoweroffOutlined />}
-                onClick={() => dispatch(activateUser(record.id))}
-              >
-                aktywuj
-              </Button>
-            )}
-          </Space>
-        );
-      },
-    },
   ];
 
   return (
-    <Table
-      loading={isLoading}
-      dataSource={dataSource}
-      rowKey="id"
-      columns={columns}
-      pagination={false}
-      tableLayout="fixed"
-    />
+    <Space direction="vertical" size="large">
+      <Card title="Lista użytkowników trackera">
+        <Table
+          loading={isLoading}
+          dataSource={dataSource}
+          rowKey="userId"
+          columns={columns}
+          pagination={false}
+          tableLayout="fixed"
+        />
+      </Card>
+    </Space>
   );
 }
 
