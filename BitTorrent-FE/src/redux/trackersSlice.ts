@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import fakeAPI from 'fakeAPI';
+// import fakeAPI from 'fakeAPI';
 import api from 'api';
 import { RootState } from './store';
 
@@ -30,7 +30,8 @@ export const fetchTrackers = createAsyncThunk('trackers/fetchTracers', async () 
 export const activateTracker = createAsyncThunk(
   'trackers/activateTracker',
   async (trackerId: string) => {
-    await fakeAPI.toggleStatusById(trackerId);
+    await api.post(`/trackers/${trackerId}/enable`);
+    // await fakeAPI.toggleStatusById(trackerId);
     return trackerId;
   },
 );
@@ -38,7 +39,8 @@ export const activateTracker = createAsyncThunk(
 export const deactivateTracker = createAsyncThunk(
   'trackers/deactivateTracker',
   async (trackerId: string) => {
-    await fakeAPI.toggleStatusById(trackerId);
+    await api.post(`/trackers/${trackerId}/disable`);
+    // await fakeAPI.toggleStatusById(trackerId);
     return trackerId;
   },
 );
