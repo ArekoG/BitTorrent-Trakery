@@ -2,45 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3fbabf6-b2ac-4a8a-8a8c-14cdd3081f1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/psk/sob/entity/repository/TrackerUserListRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/psk/sob/entity/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/2/d/2dc706ff42f5a3e1c26cfb88d19fdc6bc87c6727" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/2/d/2dc706ff42f5a3e1c26cfb88d19fdc6bc87c6727" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/6/c/6cce1891ef6acb8dc136f787fe2d78ef668c7da1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/7/e/7e90dee446e6036840aaef50087106c2c69ae49a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/e/c/ec5891e5e5c906bdc99b8b78b1526c55c1530db9" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/e/c/ec5891e5e5c906bdc99b8b78b1526c55c1530db9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/f/f/ffd2f8d63fcbb01622926fb12e302284309ad29a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/repository/TrackerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/entity/repository/TrackerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/repository/TrackerUserListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/entity/repository/TrackerUserListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/entity/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/scheduled/PingUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/scheduled/PingUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/service/TrackerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/java/psk/sob/service/TrackerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/controller/TrackerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/controller/TrackerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Tracker$TrackerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Tracker$TrackerBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Tracker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Tracker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/repository/TrackerRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/repository/TrackerUserListRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/scheduled/PingUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/scheduled/PingUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/service/TrackerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/service/TrackerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BitTorrent-FE/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BitTorrent-FE/.idea/BitTorrent-FE.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BitTorrent-FE/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BitTorrent-FE/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BitTorrent-FE/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BitTorrent-FE/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-BE/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/configuration/MvcConfiguration$SpringfoxJsonToGsonAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/configuration/MvcConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/configuration/SpringFoxConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/controller/TrackerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/File$FileBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/File.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Tracker$TrackerBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/Tracker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/dto/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/entity/Tracker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/entity/TrackerUsersList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/scheduled/PingUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/service/TrackerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/classes/psk/sob/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BitTorrent-BE/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/psk/sob/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/repository/TrackerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/psk/sob/entity/repository/TrackerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/repository/TrackerUserListRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/service/TrackerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/psk/sob/service/TrackerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/psk/sob/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/psk/sob/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/controller/TestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/repository/TrackerRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/repository/TrackerUserListRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/service/TrackerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/psk/sob/service/TrackerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/psk/sob/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-FE/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/1/1/1116e8e6e492a185f4df7f55ff557cb2e5ac869a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BitTorrent-FE/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Client.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/controller/ClientController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/entity/Tracker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/entity/TrackerUsersList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/entity/repository/TrackerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/entity/repository/TrackerUserListRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/entity/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/service/TrackerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/psk/sob/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/client-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/client-1.0-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +176,7 @@
       <updated>1620750570153</updated>
       <workItem from="1620750572686" duration="7988000" />
       <workItem from="1620759914209" duration="599000" />
+      <workItem from="1620808734955" duration="1872000" />
     </task>
     <servers />
   </component>
@@ -169,58 +188,78 @@
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
     <state x="2805" y="364" width="908" height="586" key="#xdebugger.evaluate/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772107827" />
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1620772756783">
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1620812587892">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772756783" />
-    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1620772756783">
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587892" />
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153803" />
+    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1620812587892">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.center/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772756783" />
-    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1620772756783">
+    <state width="1877" height="347" key="GridCell.Tab.0.center/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587892" />
+    <state width="1877" height="347" key="GridCell.Tab.0.center/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153803" />
+    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1620812587892">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.left/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772756783" />
-    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1620772756783">
+    <state width="1877" height="347" key="GridCell.Tab.0.left/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587892" />
+    <state width="1877" height="347" key="GridCell.Tab.0.left/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153803" />
+    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1620812587892">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.right/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772756783" />
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1620772576973">
+    <state width="1877" height="347" key="GridCell.Tab.0.right/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587892" />
+    <state width="1877" height="347" key="GridCell.Tab.0.right/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153803" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1620812587819">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772576973" />
-    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1620772576973">
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587819" />
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153804" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1620812587818">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.center/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772576973" />
-    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1620772576973">
+    <state width="1877" height="347" key="GridCell.Tab.1.center/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587818" />
+    <state width="1877" height="347" key="GridCell.Tab.1.center/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153804" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1620812587818">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.left/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772576973" />
-    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1620772576973">
+    <state width="1877" height="347" key="GridCell.Tab.1.left/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587818" />
+    <state width="1877" height="347" key="GridCell.Tab.1.left/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153803" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1620812587819">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.1.right/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772576973" />
-    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1620772076458">
+    <state width="1877" height="347" key="GridCell.Tab.1.right/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587819" />
+    <state width="1877" height="347" key="GridCell.Tab.1.right/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153804" />
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom" timestamp="1620812587819">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.bottom/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772076458" />
-    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1620772076458">
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587819" />
+    <state width="1877" height="347" key="GridCell.Tab.2.bottom/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153804" />
+    <state width="1877" height="347" key="GridCell.Tab.2.center" timestamp="1620812587819">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.center/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772076458" />
-    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1620772076458">
+    <state width="1877" height="347" key="GridCell.Tab.2.center/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587819" />
+    <state width="1877" height="347" key="GridCell.Tab.2.center/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153804" />
+    <state width="1877" height="347" key="GridCell.Tab.2.left" timestamp="1620812587819">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.left/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772076458" />
-    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1620772076458">
+    <state width="1877" height="347" key="GridCell.Tab.2.left/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587819" />
+    <state width="1877" height="347" key="GridCell.Tab.2.left/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153804" />
+    <state width="1877" height="347" key="GridCell.Tab.2.right" timestamp="1620812587819">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.2.right/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620772076458" />
+    <state width="1877" height="347" key="GridCell.Tab.2.right/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620812587819" />
+    <state width="1877" height="347" key="GridCell.Tab.2.right/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620773153804" />
+    <state x="2622" y="240" key="RollbackChangesDialog" timestamp="1620813129810">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2622" y="240" key="RollbackChangesDialog/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620813129810" />
     <state x="2613" y="255" width="585" height="530" key="find.popup" timestamp="1620771341238">
       <screen x="1946" y="0" width="1920" height="1040" />
     </state>
     <state x="2613" y="255" width="585" height="530" key="find.popup/804.-1080.1920.1040/1946.0.1920.1040/0.0.1920.1040@1946.0.1920.1040" timestamp="1620771341238" />
+    <state x="2569" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1620813120078">
+      <screen x="1946" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2569" y="225" width="672" height="678" key="search.everywhere.popup/1946.0.1920.1040/0.0.1920.1040/804.-1080.1920.1040@1946.0.1920.1040" timestamp="1620813120078" />
   </component>
   <component name="masterDetails">
     <states>
