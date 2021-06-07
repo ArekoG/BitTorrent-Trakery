@@ -46,24 +46,36 @@ public class PingUserService {
         }
     }
 
-    @Scheduled(fixedRate = 30000)
+    @Scheduled(fixedRate = 5000)
     public void pingUsersInvolvedInDataTransfer() {
         List<DataTransfer> dataTransfersActive = dataTransferRepository.findAllActive();
-        if(!dataTransfersActive.isEmpty()){ // sprawdzamy czy jest aktywne pobieranie plików
-            List<User> usersFrom = new ArrayList<>();
+        if(!dataTransfersActive.isEmpty()){
+            Map<User, List<User>> dataTransferInfo = new HashMap<>();
             for(DataTransfer dataTransfer : dataTransfersActive) {
+                List<User> usersFrom = new ArrayList<>();
                 dataTransfer.getUsersFrom().forEach(userFrom -> usersFrom.add(userRepository.findByLogin(userFrom)));
+                dataTransferInfo.put(userRepository.findByLogin(dataTransfer.getUserTo()), usersFrom);
             }
-            for(User user : usersFrom) {
-                final Map<String, Integer> variables = new HashMap<>();
-                variables.put("userId", user.getId());
+            dataTransferInfo.forEach((userTo, usersFrom) -> {
+                //userTo
+                final Map<String, Integer> userToVariables = new HashMap<>();
+                userToVariables.put("userId", userTo.getId());
                 try {
-                    restTemplate.postForObject("http://localhost:8081/client/users/{userId}/is-alive", Void.class, Object.class, variables); // Jeżeli tak to pingujemy userów zaangażowanych w to pobieranie
+                    restTemplate.postForObject("http://localhost:8081/client/users/{userId}/is-alive", Void.class, Object.class, userToVariables);
                 } catch (Exception ex) {
-                    // Jeżeli któryś z userów od których jest pobierany plik nagle się wyłączy trzeba przerzucić pobieranie całości na pozostałych.
                     // Jeżeli user pobierający się wyłączy to przerywamy pobieranie
                 }
-            }
+                //userFrom
+                for (User userFrom : usersFrom){
+                    final Map<String, Integer> userFromVariables = new HashMap<>();
+                    userFromVariables.put("userId", userFrom.getId());
+                    try {
+                        restTemplate.postForObject("http://localhost:8081/client/users/{userId}/is-alive", Void.class, Object.class, userFromVariables);
+                    } catch (Exception ex) {
+                        // Jeżeli któryś z userów od których jest pobierany plik nagle się wyłączy trzeba przerzucić pobieranie całości na pozostałych.
+                    }
+                }
+            });
         }
     }
 
