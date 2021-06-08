@@ -53,8 +53,8 @@ public class PingUserService {
             Map<User, List<User>> dataTransferInfo = new HashMap<>();
             for(DataTransfer dataTransfer : dataTransfersActive) {
                 List<User> usersFrom = new ArrayList<>();
-                dataTransfer.getUsersFrom().forEach(userFrom -> usersFrom.add(userRepository.findByLogin(userFrom)));
-                dataTransferInfo.put(userRepository.findByLogin(dataTransfer.getUserTo()), usersFrom);
+                dataTransfer.getUsersFrom().forEach(userFrom -> usersFrom.add(userRepository.findById(userFrom).orElseThrow(RuntimeException::new)));
+                dataTransferInfo.put(userRepository.findById(dataTransfer.getReceiverId()).orElseThrow(RuntimeException::new), usersFrom);
             }
             dataTransferInfo.forEach((userTo, usersFrom) -> {
                 //userTo

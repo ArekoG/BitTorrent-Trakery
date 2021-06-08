@@ -18,7 +18,7 @@ public class DataTransfer {
     private Integer id;
     @ElementCollection
     @CollectionTable(name = "usersFromList")
-    private List<String> usersFrom;
-    private String userTo;
+    private List<Integer> usersFrom;
+    private Integer receiverId;
     private String status;
 }

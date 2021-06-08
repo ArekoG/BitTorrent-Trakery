@@ -3,11 +3,15 @@ package psk.sob.service;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import psk.sob.entity.TrackerUsersList;
 import psk.sob.entity.User;
 import psk.sob.entity.repository.TrackerRepository;
 import psk.sob.entity.repository.TrackerUserListRepository;
 import psk.sob.entity.repository.UserRepository;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 @AllArgsConstructor
@@ -15,6 +19,7 @@ public class UserService {
     private UserRepository userRepository;
     private TrackerRepository trackerRepository;
     private TrackerUserListRepository trackerUserListRepository;
+    private final RestTemplate restTemplate = new RestTemplate();
 
     public void enableUser(String login) {
         User user = userRepository.findByLogin(login);
@@ -47,5 +52,12 @@ public class UserService {
         return ResponseEntity.status(200)
                 .build();
 
+    }
+
+    public void downloadFile(int userId, String fileName) {
+        Map<String, String> variables = new HashMap<>();
+        variables.put("fileName", fileName);
+        variables.put("userId", String.valueOf(userId));
+        restTemplate.postForObject("http://localhost:8080/bit-torrent/users/{userId}/files/{fileName}/download", Void.class, Object.class, variables);
     }
 }

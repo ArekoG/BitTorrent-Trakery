@@ -18,6 +18,6 @@ public class DataTransfer {
     private Integer id;
     @ElementCollection
     private List<String> usersFrom;
-    private String userTo;
+    private String receiverId;
     private String status;
 }

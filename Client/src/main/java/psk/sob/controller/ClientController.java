@@ -3,12 +3,15 @@ package psk.sob.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import psk.sob.dto.FileDownloadInformation;
 import psk.sob.service.TrackerService;
 import psk.sob.service.UserService;
+
+import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -37,5 +40,15 @@ public class ClientController {
     @PostMapping("/users/{userId}/is-alive")
     public ResponseEntity isUserAlive(@PathVariable int userId) {
         return userService.isUserAlive(userId);
+    }
+
+    @PostMapping("/users/{userId}/files/{fileName}/download")
+    public void downloadFile(@PathVariable int userId, @PathVariable String fileName) {
+        userService.downloadFile(userId, fileName);
+    }
+
+    @PostMapping("/users/{userId}/start-download")
+    public void startDownloading(@RequestBody List<FileDownloadInformation> fileDownloadInformation, @PathVariable int userId) {
+        //   userService.downloadFile(userId, fileName);
     }
 }
