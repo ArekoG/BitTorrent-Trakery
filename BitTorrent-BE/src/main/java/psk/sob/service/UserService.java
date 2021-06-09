@@ -54,11 +54,18 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void divideFileAndStartDownloading(int userId, String fileName) {
+    public void divideFileAndStartDownloading(int userId, String fileName, int trackerId) {
         //podzielnie plikow oraz przygotowanie dto
+
+        List<psk.sob.entity.User> list = userRepository.listOfUserWhoHaveTheFile(fileName, trackerId);
 
         Map<String, Integer> userToVariables = new HashMap<>();
         userToVariables.put("userId", userId);
+
+
+
+
+
 
         List<FileDownloadInformation> fileDownloadInformation = new ArrayList<>();
         fileDownloadInformation.add(FileDownloadInformation.builder()

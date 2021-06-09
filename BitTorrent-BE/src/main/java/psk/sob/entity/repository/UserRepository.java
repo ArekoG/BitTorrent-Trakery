@@ -16,4 +16,11 @@ public interface UserRepository extends JpaRepository<User, Integer> {
             "join tracker_users_list ts on u.user_id  = ts.user_id \n" +
             "join tracker t on ts.user_id  = t.tracker_id where ts.tracker_id = :id and ts.status = 'enable'", nativeQuery = true)
     List<User> findByTrackerId(@Param("id") int id);
+
+    @Query(value = "select u from users u\n" +
+            "join file f on u.user_id = f.user_id \n" +
+            "join tracker_users_list tul on u.user_id = tul.user_id\n" +
+            "join tracker t on tul.user_id = t.tracker_id\n" +
+            "where f.name = :fileName and tul.tracker_id = :trackerId", nativeQuery = true)
+    List<User> listOfUserWhoHaveTheFile(@Param("fileName") String fileName, @Param("trackerId") int trackerId);
 }
