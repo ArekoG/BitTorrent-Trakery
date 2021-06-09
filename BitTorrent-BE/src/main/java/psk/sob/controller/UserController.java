@@ -34,9 +34,8 @@ public class UserController {
         userService.disableUser(userId);
     }
 
-    @PostMapping("/users/{userId}/files/{fileName}/download/{trackerId}")
-    public void divideFileAndStartDownloading(@PathVariable int userId, @PathVariable String fileName, @PathVariable int trackerId) {
-        userService.divideFileAndStartDownloading(userId, fileName, trackerId);
+    @PostMapping("/users/{userId}/files/{fileId}/download/{trackerId}")
+    public void divideFileAndStartDownloading(@PathVariable int fileId, @PathVariable int trackerId) {
+        userService.divideFileAndStartDownloading(fileId, trackerId);
     }
-
 }

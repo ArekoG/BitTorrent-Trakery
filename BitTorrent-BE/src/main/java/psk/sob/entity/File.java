@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,8 +17,8 @@ public class File {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    private Double size;
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    private Integer size;
+    @ElementCollection
+    @CollectionTable(name = "listOfFileOwners")
+    private List<Integer> userId;
 }

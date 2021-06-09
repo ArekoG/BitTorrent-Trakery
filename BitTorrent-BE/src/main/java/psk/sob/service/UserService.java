@@ -1,26 +1,22 @@
 package psk.sob.service;
 
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.client.RestTemplate;
 import psk.sob.dto.File;
 import psk.sob.dto.FileDownloadInformation;
 import psk.sob.dto.User;
+import psk.sob.entity.repository.FileRepository;
 import psk.sob.entity.repository.UserRepository;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 @AllArgsConstructor
 public class UserService {
     private UserRepository userRepository;
-    private final RestTemplate restTemplate = new RestTemplate();
+    private FileRepository fileRepository;
 
     public List<File> getFiles(String userId) {
         return null;
@@ -54,28 +50,21 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void divideFileAndStartDownloading(int userId, String fileName, int trackerId) {
-        //podzielnie plikow oraz przygotowanie dto
-
-        List<psk.sob.entity.User> list = userRepository.listOfUserWhoHaveTheFile(fileName, trackerId);
-
-        Map<String, Integer> userToVariables = new HashMap<>();
-        userToVariables.put("userId", userId);
-
-
-
-
-
-
+    public List<FileDownloadInformation> divideFileAndStartDownloading(int fileId, int trackerId) {
+        List<Integer> ownersOfFile = userRepository.listOfUsersWhoHaveTheFile(fileId, trackerId);
         List<FileDownloadInformation> fileDownloadInformation = new ArrayList<>();
-        fileDownloadInformation.add(FileDownloadInformation.builder()
-                .fileName("test")
-                .userId(1)
-                .start(0)
-                .stop(5)
-                .build());
-        HttpHeaders header = new HttpHeaders();
-        header.setContentType(MediaType.APPLICATION_JSON);
-        restTemplate.postForEntity("http://localhost:8081/client/users/1/start-download", fileDownloadInformation, Object.class);//to id 1 trzeba w parametrze jakos
+        int start = 0;
+        int stop;
+        int fileSize = fileRepository.findById(fileId).getSize();
+        for (int id : ownersOfFile) {
+            stop = fileSize / ownersOfFile.size() + start;
+            fileDownloadInformation.add(FileDownloadInformation.builder()
+                    .userId(id)
+                    .start(start)
+                    .stop(stop - 1)
+                    .build());
+            start = stop;
+        }
+        return fileDownloadInformation;
     }
 }

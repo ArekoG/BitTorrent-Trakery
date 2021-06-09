@@ -24,5 +24,5 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<TrackerUsersList> trackerUsersList;
     @OneToMany(mappedBy = "user")
-    private Set<File> fileList;
+    private Set<DataTransfer> dataTransferList;
 }

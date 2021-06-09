@@ -9,7 +9,6 @@ import java.io.Serializable;
 @Builder
 public class FileDownloadInformation implements Serializable {
     private int userId;
-    private String fileName;
     private int start;
     private int stop;
 }

@@ -54,7 +54,7 @@ public class PingUserService {
             for(DataTransfer dataTransfer : dataTransfersActive) {
                 List<User> usersFrom = new ArrayList<>();
                 dataTransfer.getUsersFrom().forEach(userFrom -> usersFrom.add(userRepository.findById(userFrom).orElseThrow(RuntimeException::new)));
-                dataTransferInfo.put(userRepository.findById(dataTransfer.getReceiverId()).orElseThrow(RuntimeException::new), usersFrom);
+                dataTransferInfo.put(userRepository.findById(dataTransfer.getUser().getId()).orElseThrow(RuntimeException::new), usersFrom);
             }
             dataTransferInfo.forEach((userTo, usersFrom) -> {
                 //userTo
