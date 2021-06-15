@@ -42,13 +42,18 @@ public class ClientController {
         return userService.isUserAlive(userId);
     }
 
-    @PostMapping("/users/{userId}/files/{fileName}/download")
-    public void downloadFile(@PathVariable int userId, @PathVariable String fileName) {
-        userService.downloadFile(userId, fileName);
+    @PostMapping("/users/{userId}/files/{fileName}/download/{trackerId}")
+    public void downloadFile(@PathVariable int userId, @PathVariable String fileName, @PathVariable int trackerId) {
+        userService.downloadFile(userId, fileName, trackerId);
     }
 
     @PostMapping("/users/{userId}/start-download")
     public void startDownloading(@RequestBody List<FileDownloadInformation> fileDownloadInformation, @PathVariable int userId) {
-        //   userService.downloadFile(userId, fileName);
+        userService.startDownloading(fileDownloadInformation, userId);
+    }
+
+    @PostMapping("/users/{userId}/receive/{data}")
+    public void receive(@PathVariable int userId, @PathVariable String data) {
+        System.out.println(data);
     }
 }
