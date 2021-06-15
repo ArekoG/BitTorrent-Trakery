@@ -62,10 +62,17 @@ public class UserService {
 
         List<FileDownloadInformation> fileDownloadInformation = new ArrayList<>();
         fileDownloadInformation.add(FileDownloadInformation.builder()
-                .fileName("test")
+                .fileName("test.txt")
                 .userId(1)
                 .start(0)
                 .stop(5)
+                .build());
+
+        fileDownloadInformation.add(FileDownloadInformation.builder()
+                .fileName("test.txt")
+                .userId(2)
+                .start(6)
+                .stop(11)
                 .build());
         HttpHeaders header = new HttpHeaders();
         header.setContentType(MediaType.APPLICATION_JSON);
