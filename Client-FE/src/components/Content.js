@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 
 import {ManageUser} from './ManageUser';
 import {AssignUser} from './AssignUser';
+import {DownloadFile} from './DownloadFile';
 
 export class Content extends Component {
 
@@ -10,6 +11,7 @@ export class Content extends Component {
             <div className="content">
                 <ManageUser/>
                 <AssignUser/>
+                <DownloadFile/>
             </div>
         )
     }
