@@ -21,7 +21,7 @@ public class SenderEventListener implements ApplicationListener<SenderEvent> {
         ExecutorService executorService = Executors.newFixedThreadPool(senderEvent.getFileDownloadInformation().size());
         for (int i = 0; i < senderEvent.getFileDownloadInformation().size(); i++) {
             int finalI = i;
-            executorService.submit(new SenderThreadService(senderEvent.getFileDownloadInformation().get(finalI), senderEvent.getUserId(),userRepository));
+            executorService.submit(new SenderThreadService(senderEvent.getFileDownloadInformation().get(finalI), senderEvent.getUserId(),userRepository,senderEvent.getFileId()));
         }
         executorService.shutdown();
         executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);

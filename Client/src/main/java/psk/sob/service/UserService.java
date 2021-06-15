@@ -1,7 +1,8 @@
 package psk.sob.service;
 
 import lombok.AllArgsConstructor;
-import lombok.SneakyThrows;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -59,16 +60,18 @@ public class UserService {
 
     }
 
-    public void downloadFile(int userId, String fileName, int trackerId) {
+    public void downloadFile(int userId, int fileId, int trackerId) {
         Map<String, String> variables = new HashMap<>();
-        variables.put("fileName", fileName);
-        variables.put("userId", String.valueOf(userId));
+        variables.put("fileId", String.valueOf(fileId));
         variables.put("trackerId", String.valueOf(trackerId));
-        restTemplate.postForObject("http://localhost:8080/bit-torrent/users/{userId}/files/{fileName}/download", Void.class, Object.class, variables);
+        ResponseEntity<List<FileDownloadInformation>> exchange = getFileDownloadInfo(variables);
+        springEventPublisher.startDownloading(exchange.getBody(), userId, fileId);
     }
 
-    @SneakyThrows
-    public void startDownloading(List<FileDownloadInformation> fileDownloadInformation, int userId) {
-        springEventPublisher.startDownloading(fileDownloadInformation, userId);
+    private ResponseEntity<List<FileDownloadInformation>> getFileDownloadInfo(Map<String, String> variables) {
+        return restTemplate.exchange("http://localhost:8080/bit-torrent/users/files/{fileId}/download/{trackerId}",
+                HttpMethod.POST, null, new ParameterizedTypeReference<List<FileDownloadInformation>>() {
+                }, variables);
     }
+
 }

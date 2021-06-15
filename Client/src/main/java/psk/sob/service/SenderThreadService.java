@@ -16,17 +16,18 @@ public class SenderThreadService implements Runnable {
     private int userId;
     private RestTemplate restTemplate = new RestTemplate();
     private UserRepository userRepository;
-
-    public SenderThreadService(FileDownloadInformation fileDownloadInformation, int userId, UserRepository userRepository) {
+    private int fileId;
+    public SenderThreadService(FileDownloadInformation fileDownloadInformation, int userId, UserRepository userRepository,int fileId) {
         this.fileDownloadInformation = fileDownloadInformation;
         this.userId = userId;
         this.userRepository = userRepository;
+        this.fileId = fileId;
     }
 
     @SneakyThrows
     @Override
     public void run() {
-        File file = new File("files/" + userId + "/" + fileDownloadInformation.getFileName());
+        File file = new File("files/" + fileDownloadInformation.getUserId() + "/" + fileId + ".txt");
         FileInputStream fis = new FileInputStream(file);
         byte[] data = new byte[(int) file.length()];
         fis.read(data);

@@ -12,8 +12,8 @@ import java.util.List;
 public class SpringEventPublisher {
     private ApplicationEventPublisher applicationEventPublisher;
 
-    public void startDownloading(List<FileDownloadInformation> fileDownloadInformation, int userId) {
-        SenderEvent senderEvent = new SenderEvent(this, fileDownloadInformation, userId);
+    public void startDownloading(List<FileDownloadInformation> fileDownloadInformation, int userId,int fileId) {
+        SenderEvent senderEvent = new SenderEvent(this, fileDownloadInformation, userId,fileId);
         applicationEventPublisher.publishEvent(senderEvent);
     }
 }
