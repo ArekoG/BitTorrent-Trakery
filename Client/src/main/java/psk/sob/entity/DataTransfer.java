@@ -17,7 +17,10 @@ public class DataTransfer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @ElementCollection
-    private List<String> usersFrom;
-    private String receiverId;
+    @CollectionTable(name = "usersFromList")
+    private List<Integer> usersFrom;
+    @ManyToOne
+    @JoinColumn(name = "receiver_id")
+    private User user;
     private String status;
 }
