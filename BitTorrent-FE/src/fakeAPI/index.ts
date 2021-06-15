@@ -1,5 +1,4 @@
 import { Tracker } from 'redux/trackersSlice';
-import { File } from 'redux/filesSlice';
 import { User } from 'redux/usersSlice';
 
 export function fetchTracers() {
@@ -25,31 +24,6 @@ export function fetchTracers() {
               trackerName: 'Tracker3',
               trackerStatus: 'enable',
               numberOfUsers: 2,
-            },
-          ],
-        }),
-      500,
-    ),
-  );
-}
-
-export function fetchFiles() {
-  return new Promise<{ data: File[] }>((resolve) =>
-    setTimeout(
-      () =>
-        resolve({
-          data: [
-            {
-              id: '1',
-              name: 'plik1.txt',
-              size: '1024kb',
-              users: [{ id: '1' }, { id: '2' }],
-            },
-            {
-              id: '2',
-              name: 'plik2.txt',
-              size: '2048kb',
-              users: [{ id: '1' }, { id: '2' }],
             },
           ],
         }),
@@ -155,7 +129,6 @@ export function toggleStatusById(id: string) {
 
 const fakeAPI = {
   fetchTracers,
-  fetchFiles,
   fetchAllUsers,
   fetchUsers,
   toggleStatusById,

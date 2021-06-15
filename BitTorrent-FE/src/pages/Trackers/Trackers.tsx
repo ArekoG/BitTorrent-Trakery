@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Card, Space, Table, Tag } from 'antd';
 import { PoweroffOutlined, TeamOutlined } from '@ant-design/icons';
-// import { FolderOutlined } from '@ant-design/icons';
 import {
   getTrackers,
   fetchTrackers,
@@ -61,9 +60,6 @@ function Trackers() {
         const status = record.trackerStatus === 'enable';
         return (
           <Space size={[12, 12]} wrap>
-            {/* <Link to={paths.trackerFiles.replace(':id', record.id)}>
-              <Button icon={<FolderOutlined />}>pliki</Button>
-            </Link> */}
             <Link to={paths.trackerUsers.replace(':id', record.trackerId)}>
               <Button icon={<TeamOutlined />}>użytkownicy</Button>
             </Link>
@@ -122,11 +118,6 @@ function Trackers() {
         const status = record.userStatus === 'enable';
         return (
           <Space size={[12, 12]} wrap>
-            {/* <Link
-              to={paths.userFiles.replace(':trackerId', trackerId).replace(':userId', record.id)}
-            >
-              <Button icon={<FolderOutlined />}>pliki</Button>
-            </Link> */}
             {status ? (
               <Button
                 danger

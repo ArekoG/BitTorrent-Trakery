@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Card, Space, Table, Tag } from 'antd';
-import { getUsers, fetchUsers } from 'redux/usersSlice';
+import { Button, Card, Space, Table, Tag } from 'antd';
+import { PoweroffOutlined } from '@ant-design/icons';
+import { getUsers, fetchUsers, activateUser, deactivateUser } from 'redux/usersSlice';
 
 type Params = {
   id: string;
@@ -39,6 +40,35 @@ function TrackerUserList() {
           <Tag color={color} key={status.toString()}>
             {status ? 'aktywny' : 'nieaktywny'}
           </Tag>
+        );
+      },
+    },
+    {
+      title: 'Akcje',
+      key: 'action',
+      width: '35%',
+      render: (text: string, record: any) => {
+        const status = record.userStatus === 'enable';
+        return (
+          <Space size={[12, 12]} wrap>
+            {status ? (
+              <Button
+                danger
+                icon={<PoweroffOutlined />}
+                onClick={() => dispatch(deactivateUser(record.userId))}
+              >
+                dezaktywuj
+              </Button>
+            ) : (
+              <Button
+                className="btn-green"
+                icon={<PoweroffOutlined />}
+                onClick={() => dispatch(activateUser(record.userId))}
+              >
+                aktywuj
+              </Button>
+            )}
+          </Space>
         );
       },
     },
