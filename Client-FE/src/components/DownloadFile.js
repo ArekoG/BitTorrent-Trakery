@@ -33,9 +33,9 @@ export class DownloadFile extends Component {
             <div className="manageUser">
                 <h2>Pobierz plik</h2>
                 <form onSubmit ={this.submitHandler}>
-                    <input type="number" placeholder="ID użytkownika" name = "idTracker" value={this.state.userID} onChange={this.changeHandler}></input>
-                    <input type="number" placeholder="ID pliku" name = "idTracker" value={this.state.fileID} onChange={this.changeHandler}></input>
-                    <input type="number" placeholder="ID tracker'a" name = "idTracker" value={this.state.trackerID} onChange={this.changeHandler}></input>
+                    <input type="number" placeholder="ID użytkownika" name = "userID" value={this.state.userID} onChange={this.changeHandler}></input>
+                    <input type="number" placeholder="ID pliku" name = "fileID" value={this.state.fileID} onChange={this.changeHandler}></input>
+                    <input type="number" placeholder="ID tracker'a" name = "trackerID" value={this.state.trackerID} onChange={this.changeHandler}></input>
                     <button type="submit" className="assaignBtn">Pobierz</button>
                 </form>
             </div>
