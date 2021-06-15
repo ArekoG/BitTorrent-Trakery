@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import fakeAPI from 'fakeAPI';
 import api from 'api';
+// import fakeAPI from 'fakeAPI';
 import { RootState } from './store';
 
 export interface Tracker {

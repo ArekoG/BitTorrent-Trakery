@@ -3,7 +3,12 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Card, Space, Table, Tag } from 'antd';
 import { PoweroffOutlined } from '@ant-design/icons';
-import { getUsers, fetchUsers, activateUser, deactivateUser } from 'redux/usersSlice';
+import {
+  getUsers,
+  fetchUsers,
+  activateUserInTracker,
+  deactivateUserInTracker,
+} from 'redux/usersSlice';
 
 type Params = {
   id: string;
@@ -55,7 +60,9 @@ function TrackerUserList() {
               <Button
                 danger
                 icon={<PoweroffOutlined />}
-                onClick={() => dispatch(deactivateUser(record.userId))}
+                onClick={() =>
+                  dispatch(deactivateUserInTracker({ trackerId, userId: record.userId }))
+                }
               >
                 dezaktywuj
               </Button>
@@ -63,7 +70,9 @@ function TrackerUserList() {
               <Button
                 className="btn-green"
                 icon={<PoweroffOutlined />}
-                onClick={() => dispatch(activateUser(record.userId))}
+                onClick={() =>
+                  dispatch(activateUserInTracker({ trackerId, userId: record.userId }))
+                }
               >
                 aktywuj
               </Button>
