@@ -3,6 +3,7 @@ package psk.sob.controller;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import psk.sob.dto.File;
+import psk.sob.dto.FileDownloadInformation;
 import psk.sob.dto.User;
 import psk.sob.service.UserService;
 
@@ -34,4 +35,8 @@ public class UserController {
         userService.disableUser(userId);
     }
 
+    @PostMapping("/users/files/{fileId}/download/{trackerId}")
+    public List<FileDownloadInformation> divideFileAndStartDownloading(@PathVariable int fileId, @PathVariable int trackerId) {
+        return userService.divideFileAndStartDownloading(fileId, trackerId);
+    }
 }

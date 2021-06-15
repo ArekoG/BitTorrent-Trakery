@@ -4,13 +4,18 @@ import lombok.AllArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import psk.sob.dto.DataTransferInfo;
+import psk.sob.entity.DataTransfer;
 import psk.sob.entity.Tracker;
 import psk.sob.entity.TrackerUsersList;
 import psk.sob.entity.User;
+import psk.sob.entity.repository.DataTransferRepository;
 import psk.sob.entity.repository.TrackerRepository;
 import psk.sob.entity.repository.TrackerUserListRepository;
 import psk.sob.entity.repository.UserRepository;
+import psk.sob.service.DataTransferService;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +26,9 @@ public class PingUserService {
     private UserRepository userRepository;
     private TrackerRepository trackerRepository;
     private TrackerUserListRepository trackerUserListRepository;
+    private DataTransferRepository dataTransferRepository;
     private final RestTemplate restTemplate = new RestTemplate();
+    private DataTransferService dataTransferService;
 
     @Scheduled(fixedRate = 30000)
     public void pingUsers() {
@@ -39,8 +46,45 @@ public class PingUserService {
                     trackerUserListRepository.save(trackerUsersList);
                 }
             }
-
         }
-
     }
+
+    @Scheduled(fixedRate = 5000)
+    public void pingUsersInvolvedInDataTransfer() {
+        List<DataTransfer> dataTransfersActive = dataTransferRepository.findAllActive();
+        if(!dataTransfersActive.isEmpty()){
+            List<DataTransferInfo> dataTransferInfoList = new ArrayList<>();
+            for(DataTransfer dataTransfer : dataTransfersActive) {
+                List<User> usersFrom = new ArrayList<>();
+                dataTransfer.getUsersFrom().forEach(userFrom -> usersFrom.add(userRepository.findById(userFrom).orElseThrow(RuntimeException::new)));
+                dataTransferInfoList.add(
+                        DataTransferInfo.builder()
+                                .dataTransferId(dataTransfer.getId())
+                                .userTo(userRepository.findById(dataTransfer.getUser().getId()).orElseThrow(RuntimeException::new))
+                                .userFromList(usersFrom).build());
+            }
+            dataTransferInfoList.forEach(dataTransferInfo -> {
+                //userTo
+                final Map<String, Integer> userToVariables = new HashMap<>();
+                userToVariables.put("userId", dataTransferInfo.getUserTo().getId());
+                try {
+                    restTemplate.postForObject("http://localhost:8081/client/users/{userId}/is-alive", Void.class, Object.class, userToVariables);
+                } catch (Exception ex) {
+                    // Jeżeli user pobierający się wyłączy to przerywamy pobieranie
+                    dataTransferService.disableTransfer(dataTransferInfo.getDataTransferId());
+                }
+                //userFrom
+                for (User userFrom : dataTransferInfo.getUserFromList()){
+                    final Map<String, Integer> userFromVariables = new HashMap<>();
+                    userFromVariables.put("userId", userFrom.getId());
+                    try {
+                        restTemplate.postForObject("http://localhost:8081/client/users/{userId}/is-alive", Void.class, Object.class, userFromVariables);
+                    } catch (Exception ex) {
+                        // Jeżeli któryś z userów od których jest pobierany plik nagle się wyłączy trzeba przerzucić pobieranie całości na pozostałych.
+                    }
+                }
+            });
+        }
+    }
+
 }

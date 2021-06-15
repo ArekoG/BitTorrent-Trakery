@@ -11,14 +11,16 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class File {
+public class DataTransfer {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String name;
-    private Integer size;
     @ElementCollection
-    @CollectionTable(name = "listOfFileOwners")
-    private List<Integer> userId;
+    @CollectionTable(name = "usersFromList")
+    private List<Integer> usersFrom;
+    @ManyToOne
+    @JoinColumn(name = "receiver_id")
+    private User user;
+    private String status;
 }
