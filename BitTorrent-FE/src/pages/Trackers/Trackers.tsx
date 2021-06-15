@@ -9,7 +9,12 @@ import {
   activateTracker,
   deactivateTracker,
 } from 'redux/trackersSlice';
-import { getUsers, fetchAllUsers, activateUser, deactivateUser } from 'redux/usersSlice';
+import {
+  getUsers,
+  fetchAllUsers,
+  activateUserGlobal,
+  deactivateUserGlobal,
+} from 'redux/usersSlice';
 import paths from 'routes/paths';
 
 function Trackers() {
@@ -122,7 +127,7 @@ function Trackers() {
               <Button
                 danger
                 icon={<PoweroffOutlined />}
-                onClick={() => dispatch(deactivateUser(record.userId))}
+                onClick={() => dispatch(deactivateUserGlobal(record.userId))}
               >
                 dezaktywuj
               </Button>
@@ -130,7 +135,7 @@ function Trackers() {
               <Button
                 className="btn-green"
                 icon={<PoweroffOutlined />}
-                onClick={() => dispatch(activateUser(record.userId))}
+                onClick={() => dispatch(activateUserGlobal(record.userId))}
               >
                 aktywuj
               </Button>

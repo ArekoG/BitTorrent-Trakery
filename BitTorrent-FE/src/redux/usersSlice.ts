@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import fakeAPI from 'fakeAPI';
 import api from 'api';
+// import fakeAPI from 'fakeAPI';
 import { RootState } from './store';
 
 export interface User {
@@ -33,18 +33,55 @@ export const fetchUsers = createAsyncThunk('tracker/fetchUsers', async (trackerI
   return result.data;
 });
 
-export const activateUser = createAsyncThunk('users/activateUser', async (trackerId: string) => {
-  await fakeAPI.toggleStatusById(trackerId);
-  return trackerId;
-});
-
-export const deactivateUser = createAsyncThunk(
-  'users/deactivateUser',
-  async (trackerId: string) => {
-    await fakeAPI.toggleStatusById(trackerId);
-    return trackerId;
+export const activateUserGlobal = createAsyncThunk(
+  'users/activateUserGlobal',
+  async (userId: string) => {
+    await api.post(`/users/${userId}/enabled`);
+    // await fakeAPI.toggleStatusById(userId);
+    return userId;
   },
 );
+
+export const deactivateUserGlobal = createAsyncThunk(
+  'users/deactivateUserGlobal',
+  async (userId: string) => {
+    await api.post(`/users/${userId}/disabled`);
+    // await fakeAPI.toggleStatusById(userId);
+    return userId;
+  },
+);
+
+export const activateUserInTracker = createAsyncThunk(
+  'users/activateUserInTracker',
+  async ({ trackerId, userId }: { trackerId: string; userId: string }) => {
+    await api.post(`/trackers/${trackerId}/users/${userId}/enabled`);
+    // await fakeAPI.toggleStatusById(userId);
+    return userId;
+  },
+);
+
+export const deactivateUserInTracker = createAsyncThunk(
+  'users/deactivateUserInTracker',
+  async ({ trackerId, userId }: { trackerId: string; userId: string }) => {
+    await api.post(`/trackers/${trackerId}/users/${userId}/disabled`);
+    // await fakeAPI.toggleStatusById(userId);
+    return userId;
+  },
+);
+
+function activateUser(state: any, action: any) {
+  state.isLoading = false;
+  state.data = state.data.map((value: any) =>
+    value.userId === action.payload ? { ...value, userStatus: 'enable' } : value,
+  );
+}
+
+function deactivateUser(state: any, action: any) {
+  state.isLoading = false;
+  state.data = state.data.map((value: any) =>
+    value.userId === action.payload ? { ...value, userStatus: 'disable' } : value,
+  );
+}
 
 export const usersSlice = createSlice({
   name: 'users',
@@ -74,29 +111,41 @@ export const usersSlice = createSlice({
         state.isLoading = false;
         state.data = action.payload;
       })
-      .addCase(activateUser.pending, (state) => {
+      .addCase(activateUserGlobal.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(activateUser.rejected, (state) => {
+      .addCase(activateUserGlobal.rejected, (state) => {
         state.isLoading = false;
       })
-      .addCase(activateUser.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.data = state.data.map((value) =>
-          value.userId === action.payload ? { ...value, userStatus: 'enable' } : value,
-        );
+      .addCase(activateUserGlobal.fulfilled, (state, action) => {
+        activateUser(state, action);
       })
-      .addCase(deactivateUser.pending, (state) => {
+      .addCase(deactivateUserGlobal.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(deactivateUser.rejected, (state) => {
+      .addCase(deactivateUserGlobal.rejected, (state) => {
         state.isLoading = false;
       })
-      .addCase(deactivateUser.fulfilled, (state, action) => {
+      .addCase(deactivateUserGlobal.fulfilled, (state, action) => {
+        deactivateUser(state, action);
+      })
+      .addCase(activateUserInTracker.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(activateUserInTracker.rejected, (state) => {
         state.isLoading = false;
-        state.data = state.data.map((value) =>
-          value.userId === action.payload ? { ...value, userStatus: 'disable' } : value,
-        );
+      })
+      .addCase(activateUserInTracker.fulfilled, (state, action) => {
+        activateUser(state, action);
+      })
+      .addCase(deactivateUserInTracker.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(deactivateUserInTracker.rejected, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(deactivateUserInTracker.fulfilled, (state, action) => {
+        deactivateUser(state, action);
       });
   },
 });
