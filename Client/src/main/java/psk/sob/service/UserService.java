@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import psk.sob.dto.FileDownloadInformation;
 import psk.sob.entity.DataTransfer;
+import psk.sob.entity.Tracker;
 import psk.sob.entity.TrackerUsersList;
 import psk.sob.entity.User;
 import psk.sob.entity.repository.DataTransferRepository;
@@ -71,20 +72,21 @@ public class UserService {
         variables.put("fileId", String.valueOf(fileId));
         variables.put("trackerId", String.valueOf(trackerId));
         ResponseEntity<List<FileDownloadInformation>> exchange = getFileDownloadInfo(variables);
-        DataTransfer dataTransfer = getDataTransfer(userId, exchange);
+        DataTransfer dataTransfer = getDataTransfer(userId, exchange,trackerId);
         dataTransferRepository.save(dataTransfer);
         springEventPublisher.startDownloading(exchange.getBody(), userId, fileId, dataTransfer.getId());
     }
 
-    private DataTransfer getDataTransfer(int userId, ResponseEntity<List<FileDownloadInformation>> exchange) {
-        User user = userRepository.findById(userId)
-                .get();
+    private DataTransfer getDataTransfer(int userId, ResponseEntity<List<FileDownloadInformation>> exchange, int trackerId) {
+        User user = userRepository.findById(userId).orElseThrow(RuntimeException::new);
+        Tracker tracker = trackerRepository.findById(trackerId).orElseThrow(RuntimeException::new);
         DataTransfer dataTransfer = new DataTransfer();
         dataTransfer.setUser(user);
         dataTransfer.setUsersFrom(exchange.getBody().stream()
                 .map(FileDownloadInformation::getUserId)
                 .collect(Collectors.toList()));
         dataTransfer.setStatus("active");
+        dataTransfer.setTracker(tracker);
         return dataTransfer;
     }
 
