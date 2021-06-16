@@ -54,7 +54,7 @@ public class UserService {
 
 
     public ResponseEntity isUserAlive(int userId) {
-        Integer count = userRepository.countActiveUserByUserIdAndTrackerId(userId);
+        Integer count = userRepository.countActiveUserByUserId(userId);
         if (count == 0) {
             return ResponseEntity.status(500)
                     .build();
@@ -65,6 +65,9 @@ public class UserService {
     }
 
     public void downloadFile(int userId, int fileId, int trackerId) {
+        Integer userActive = userRepository.isUserActive(userId, trackerId);
+        if (userActive == 0)
+            return;
         Map<String, String> variables = new HashMap<>();
         variables.put("fileId", String.valueOf(fileId));
         variables.put("trackerId", String.valueOf(trackerId));

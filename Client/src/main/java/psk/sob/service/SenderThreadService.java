@@ -43,7 +43,7 @@ public class SenderThreadService implements Runnable {
         String fileContent = new String(data, "UTF-8");
         for (int i = fileDownloadInformation.getStart(); i <= fileDownloadInformation.getStop(); i++) {
             DataTransfer dataTransfer = dataTransferRepository.findById(dataTransferId).orElseThrow(RuntimeException::new);
-            if (dataTransfer.getStatus() != "inactive") {
+            if (!dataTransfer.getStatus().equals("inactive")) {
                 Map<String, String> variables = new HashMap<>();
                 variables.put("userId", String.valueOf(userId));
                 restTemplate.postForObject("http://localhost:8081/client/users/" + userId + "/receive/" + fileContent.charAt(i), Void.class, Object.class);
