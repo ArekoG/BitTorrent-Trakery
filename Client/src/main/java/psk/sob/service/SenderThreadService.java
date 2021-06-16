@@ -39,7 +39,7 @@ public class SenderThreadService implements Runnable {
         byte[] data = new byte[(int) file.length()];
         fis.read(data);
         fis.close();
-
+        log.info("[UserId:" + fileDownloadInformation.getUserId() + " start sending file. DataTransferId:" + dataTransferId + "]");
         String fileContent = new String(data, "UTF-8");
         for (int i = fileDownloadInformation.getStart(); i <= fileDownloadInformation.getStop(); i++) {
             DataTransfer dataTransfer = dataTransferRepository.findById(dataTransferId).orElseThrow(RuntimeException::new);
@@ -54,6 +54,7 @@ public class SenderThreadService implements Runnable {
             }
 
         }
+        log.info("[UserId:" + fileDownloadInformation.getUserId() + " stop sending file. DataTransferId:" + dataTransferId + "]");
 
     }
 }
