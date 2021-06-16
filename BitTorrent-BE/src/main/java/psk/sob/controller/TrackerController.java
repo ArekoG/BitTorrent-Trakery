@@ -30,6 +30,11 @@ public class TrackerController {
         trackerService.enableUserOnTracker(trackerId, userId);
     }
 
+    @PostMapping("/trackers/{trackerId}/users/{userId}/disable")
+    public void disableUserOnTracker(@PathVariable int trackerId, @PathVariable int userId) {
+        trackerService.disableUserOnTracker(trackerId, userId);
+    }
+
     @PostMapping("/trackers/{trackerId}/enable")
     public void enableTracker(@PathVariable int trackerId) {
         trackerService.enableTracker(trackerId);

@@ -47,6 +47,7 @@ public class TrackerService {
         return null;
     }
 
+    @Transactional
     public void enableUserOnTracker(int trackerId, int userId) {
         TrackerUsersList trackerIdAndUserId = trackerUserListRepository.findByTrackerIdAndUserId(trackerId, userId);
         trackerIdAndUserId.setStatus("enable");
@@ -61,11 +62,19 @@ public class TrackerService {
         tracker.setStatus("enable");
         trackerRepository.save(tracker);
     }
+
     @Transactional
     public void disableTracker(int trackerId) {
         psk.sob.entity.Tracker tracker = trackerRepository.findById(trackerId)
                 .orElseThrow(RuntimeException::new);
         tracker.setStatus("disable");
         trackerRepository.save(tracker);
+    }
+
+    @Transactional
+    public void disableUserOnTracker(int trackerId, int userId) {
+        TrackerUsersList trackerIdAndUserId = trackerUserListRepository.findByTrackerIdAndUserId(trackerId, userId);
+        trackerIdAndUserId.setStatus("disable");
+        trackerUserListRepository.save(trackerIdAndUserId);
     }
 }
