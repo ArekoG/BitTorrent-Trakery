@@ -24,7 +24,6 @@ public class TrackerController {
         return trackerService.getUsersInTracker(trackerId);
     }
 
-
     @PostMapping("/trackers/{trackerId}/users/{userId}/enable")
     public void enableUserOnTracker(@PathVariable int trackerId, @PathVariable int userId) {
         trackerService.enableUserOnTracker(trackerId, userId);

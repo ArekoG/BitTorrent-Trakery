@@ -22,5 +22,8 @@ public class DataTransfer {
     @ManyToOne
     @JoinColumn(name = "receiver_id")
     private User user;
+    @ManyToOne
+    @JoinColumn(name = "tracker_id")
+    private Tracker tracker;
     private String status;
 }

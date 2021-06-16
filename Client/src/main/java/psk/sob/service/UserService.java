@@ -61,7 +61,6 @@ public class UserService {
         }
         return ResponseEntity.status(200)
                 .build();
-
     }
 
     public void downloadFile(int userId, int fileId, int trackerId) {
@@ -95,4 +94,13 @@ public class UserService {
                 }, variables);
     }
 
+    public ResponseEntity isUserAliveInTracker(int trackerId, int userId) {
+        Integer count = trackerUserListRepository.countTrackerUsersListByUserIdAndTrackerId(trackerId, userId);
+        if (count == 0) {
+            return ResponseEntity.status(500)
+                    .build();
+        }
+        return ResponseEntity.status(200)
+                .build();
+    }
 }

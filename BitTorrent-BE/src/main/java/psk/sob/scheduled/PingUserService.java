@@ -49,7 +49,7 @@ public class PingUserService {
         }
     }
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 1000)
     public void pingUsersInvolvedInDataTransfer() {
         List<DataTransfer> dataTransfersActive = dataTransferRepository.findAllActive();
         if(!dataTransfersActive.isEmpty()){
@@ -61,16 +61,20 @@ public class PingUserService {
                         DataTransferInfo.builder()
                                 .dataTransferId(dataTransfer.getId())
                                 .userTo(userRepository.findById(dataTransfer.getUser().getId()).orElseThrow(RuntimeException::new))
-                                .userFromList(usersFrom).build());
+                                .userFromList(usersFrom)
+                                .trackerId(dataTransfer.getTracker().getId()).build());
             }
             dataTransferInfoList.forEach(dataTransferInfo -> {
                 //userTo
-                final Map<String, Integer> userToVariables = new HashMap<>();
-                userToVariables.put("userId", dataTransferInfo.getUserTo().getId());
                 try {
-                    restTemplate.postForObject("http://localhost:8081/client/users/{userId}/is-alive", Void.class, Object.class, userToVariables);
+                    restTemplate.postForObject("http://localhost:8081/client/users/"
+                            + dataTransferInfo.getUserTo().getId() +"/is-alive", Void.class, Object.class);
+                    restTemplate.postForObject("http://localhost:8081/client/trackers/"
+                            + dataTransferInfo.getTrackerId() +"/users/"
+                            + dataTransferInfo.getUserTo().getId() +"/is-alive", Void.class, Object.class);
                 } catch (Exception ex) {
                     // Jeżeli user pobierający się wyłączy to przerywamy pobieranie
+                    // Jeżeli user pobierający zostanie wyłączony w trackerze to przerywamy pobieranie
                     dataTransferService.disableTransfer(dataTransferInfo.getDataTransferId());
                 }
                 //userFrom
