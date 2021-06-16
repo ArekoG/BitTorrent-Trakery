@@ -36,7 +36,7 @@ export const fetchUsers = createAsyncThunk('tracker/fetchUsers', async (trackerI
 export const activateUserGlobal = createAsyncThunk(
   'users/activateUserGlobal',
   async (userId: string) => {
-    await api.post(`/users/${userId}/enabled`);
+    await api.post(`/users/${userId}/enable`);
     // await fakeAPI.toggleStatusById(userId);
     return userId;
   },
@@ -45,7 +45,7 @@ export const activateUserGlobal = createAsyncThunk(
 export const deactivateUserGlobal = createAsyncThunk(
   'users/deactivateUserGlobal',
   async (userId: string) => {
-    await api.post(`/users/${userId}/disabled`);
+    await api.post(`/users/${userId}/disable`);
     // await fakeAPI.toggleStatusById(userId);
     return userId;
   },
@@ -54,7 +54,7 @@ export const deactivateUserGlobal = createAsyncThunk(
 export const activateUserInTracker = createAsyncThunk(
   'users/activateUserInTracker',
   async ({ trackerId, userId }: { trackerId: string; userId: string }) => {
-    await api.post(`/trackers/${trackerId}/users/${userId}/enabled`);
+    await api.post(`/trackers/${trackerId}/users/${userId}/enable`);
     // await fakeAPI.toggleStatusById(userId);
     return userId;
   },
@@ -63,7 +63,7 @@ export const activateUserInTracker = createAsyncThunk(
 export const deactivateUserInTracker = createAsyncThunk(
   'users/deactivateUserInTracker',
   async ({ trackerId, userId }: { trackerId: string; userId: string }) => {
-    await api.post(`/trackers/${trackerId}/users/${userId}/disabled`);
+    await api.post(`/trackers/${trackerId}/users/${userId}/disable`);
     // await fakeAPI.toggleStatusById(userId);
     return userId;
   },
