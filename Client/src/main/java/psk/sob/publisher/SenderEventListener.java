@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
+import psk.sob.entity.DataTransfer;
 import psk.sob.entity.repository.DataTransferRepository;
 import psk.sob.service.SenderThreadService;
 
@@ -26,5 +27,8 @@ public class SenderEventListener implements ApplicationListener<SenderEvent> {
         }
         executorService.shutdown();
         executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
+        DataTransfer dataTransfer = dataTransferRepository.findById(senderEvent.getDataTransferId()).orElseThrow(RuntimeException::new);
+        dataTransfer.setStatus("inactive");
+        dataTransferRepository.save(dataTransfer);
     }
 }
