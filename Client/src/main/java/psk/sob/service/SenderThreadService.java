@@ -51,7 +51,7 @@ public class SenderThreadService implements Runnable {
                 restTemplate.postForObject("http://localhost:8081/client/users/" + userId + "/receive/" + fileContent.charAt(i), Void.class, Object.class);
                 Thread.sleep(2500);
             } else {
-                log.error("[Downloader is offline. DataTransferId:" + dataTransferId + ", receiverId:" + userId + ", senderId:" + fileDownloadInformation.getUserId() + "]");
+                log.error("[The download has been stopped. DataTransferId:" + dataTransferId + ", receiverId:" + userId + ", senderId:" + fileDownloadInformation.getUserId() + "]");
                 throw new RuntimeException();
             }
 
