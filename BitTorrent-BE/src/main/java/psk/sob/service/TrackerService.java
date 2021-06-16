@@ -36,7 +36,7 @@ public class TrackerService {
         List<TrackerUsersList> trackerUsersList = trackerUserListRepository.findAllByTrackerId(trackerId);
         trackerUsersList.forEach(i -> trackesUsersListAfterMapping.add(
                 User.builder()
-                        .userId(i.getId())
+                        .userId(i.getUser().getId())
                         .userStatus(i.getStatus())
                         .userLogin(i.getUser().getLogin())
                         .build()));
