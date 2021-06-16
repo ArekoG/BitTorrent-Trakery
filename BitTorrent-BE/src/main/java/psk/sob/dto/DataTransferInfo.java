@@ -10,6 +10,7 @@ import java.util.List;
 @Builder
 public class DataTransferInfo {
     private int dataTransferId;
+    private int trackerId;
     private psk.sob.entity.User userTo;
     private List<User> userFromList;
 }

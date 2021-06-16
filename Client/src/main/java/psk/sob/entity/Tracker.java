@@ -21,4 +21,7 @@ public class Tracker {
 
     @OneToMany(mappedBy = "tracker")
     private Set<TrackerUsersList> trackerUsersList;
+
+    @OneToMany(mappedBy = "tracker")
+    private Set<DataTransfer> dataTransfers;
 }

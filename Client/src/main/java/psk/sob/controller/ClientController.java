@@ -42,6 +42,11 @@ public class ClientController {
         return userService.isUserAlive(userId);
     }
 
+    @PostMapping("trackers/{trackerId}/users/{userId}/is-alive")
+    public ResponseEntity isUserAliveInTracker(@PathVariable int trackerId, @PathVariable int userId) {
+        return userService.isUserAliveInTracker(trackerId, userId);
+    }
+
     @PostMapping("/users/{userId}/files/{fileId}/download/{trackerId}")
     public void downloadFile(@PathVariable int userId, @PathVariable int fileId, @PathVariable int trackerId) {
         userService.downloadFile(userId, fileId, trackerId);
