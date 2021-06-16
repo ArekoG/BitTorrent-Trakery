@@ -10,6 +10,7 @@ import psk.sob.publisher.SenderEvent;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,13 +35,14 @@ public class SenderThreadService implements Runnable {
     @SneakyThrows
     @Override
     public void run() {
-        File file = new File("files/" + fileDownloadInformation.getUserId() + "/" + fileId + ".txt");
+        File file = new File("files" + File.separator + +fileDownloadInformation.getUserId() + File.separator + fileId + ".txt");
         FileInputStream fis = new FileInputStream(file);
         byte[] data = new byte[(int) file.length()];
-        fis.read(data);
+        int bytesRead = fis.read(data);
+        log.debug("Bytes read:" + bytesRead);
         fis.close();
         log.info("[UserId:" + fileDownloadInformation.getUserId() + " start sending file. DataTransferId:" + dataTransferId + "]");
-        String fileContent = new String(data, "UTF-8");
+        String fileContent = new String(data, StandardCharsets.UTF_8);
         for (int i = fileDownloadInformation.getStart(); i <= fileDownloadInformation.getStop(); i++) {
             DataTransfer dataTransfer = dataTransferRepository.findById(dataTransferId).orElseThrow(RuntimeException::new);
             if (!"inactive".equals(dataTransfer.getStatus())) {
