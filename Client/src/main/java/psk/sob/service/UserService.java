@@ -1,6 +1,7 @@
 package psk.sob.service;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class UserService {
     private UserRepository userRepository;
     private TrackerRepository trackerRepository;
@@ -66,13 +68,20 @@ public class UserService {
 
     public void downloadFile(int userId, int fileId, int trackerId) {
         Integer userActive = userRepository.isUserActive(userId, trackerId);
-        if (userActive == 0)
+        Tracker tracker = trackerRepository.findById(trackerId).orElseThrow(RuntimeException::new);
+        if (userActive == 0) {
+            log.error("[Receiver status if offline or receiver is banned from tracker]");
             return;
+        }
+        if ("disable".equals(tracker.getStatus())) {
+            log.error("[Tracker status if offline]");
+            return;
+        }
         Map<String, String> variables = new HashMap<>();
         variables.put("fileId", String.valueOf(fileId));
         variables.put("trackerId", String.valueOf(trackerId));
         ResponseEntity<List<FileDownloadInformation>> exchange = getFileDownloadInfo(variables);
-        DataTransfer dataTransfer = getDataTransfer(userId, exchange,trackerId);
+        DataTransfer dataTransfer = getDataTransfer(userId, exchange, trackerId);
         dataTransferRepository.save(dataTransfer);
         springEventPublisher.startDownloading(exchange.getBody(), userId, fileId, dataTransfer.getId());
     }

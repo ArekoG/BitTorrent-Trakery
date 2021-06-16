@@ -43,13 +43,13 @@ public class SenderThreadService implements Runnable {
         String fileContent = new String(data, "UTF-8");
         for (int i = fileDownloadInformation.getStart(); i <= fileDownloadInformation.getStop(); i++) {
             DataTransfer dataTransfer = dataTransferRepository.findById(dataTransferId).orElseThrow(RuntimeException::new);
-            if (!dataTransfer.getStatus().equals("inactive")) {
+            if (!"inactive".equals(dataTransfer.getStatus())) {
                 Map<String, String> variables = new HashMap<>();
                 variables.put("userId", String.valueOf(userId));
                 restTemplate.postForObject("http://localhost:8081/client/users/" + userId + "/receive/" + fileContent.charAt(i), Void.class, Object.class);
                 Thread.sleep(2500);
             } else {
-                log.error("Downloader is offline. DataTransferId:" + dataTransferId + ", receiverId:" + userId + ", senderId:" + fileDownloadInformation.getUserId());
+                log.error("[Downloader is offline. DataTransferId:" + dataTransferId + ", receiverId:" + userId + ", senderId:" + fileDownloadInformation.getUserId() + "]");
                 throw new RuntimeException();
             }
 
