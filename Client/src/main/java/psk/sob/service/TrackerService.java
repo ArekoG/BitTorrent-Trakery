@@ -33,7 +33,7 @@ public class TrackerService {
             variables.put("trackerId", tracker.getId());
             variables.put("userId", userId);
 
-            restTemplate.postForObject("http://localhost:8080/bit-torrent/trackers/{trackerId}/users/{userId}/enabled", Void.class, Object.class, variables);
+            restTemplate.postForObject("http://localhost:8080/bit-torrent/trackers/{trackerId}/users/{userId}/enable", Void.class, Object.class, variables);
         }
     }
 }
