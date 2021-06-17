@@ -72,6 +72,8 @@ public class PingUserService {
                     restTemplate.postForObject("http://localhost:8081/client/trackers/"
                             + dataTransferInfo.getTrackerId() +"/users/"
                             + dataTransferInfo.getUserTo().getId() +"/is-alive", Void.class, Object.class);
+                    restTemplate.postForObject("http://localhost:8080/bit-torrent/trackers/"
+                            + dataTransferInfo.getTrackerId() +"/is-alive", Void.class, Object.class);
                 } catch (Exception ex) {
                     // Jeżeli user pobierający się wyłączy to przerywamy pobieranie
                     // Jeżeli user pobierający zostanie wyłączony w trackerze to przerywamy pobieranie

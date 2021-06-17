@@ -1,6 +1,7 @@
 package psk.sob.service;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import psk.sob.dto.File;
@@ -76,5 +77,15 @@ public class TrackerService {
         TrackerUsersList trackerIdAndUserId = trackerUserListRepository.findByTrackerIdAndUserId(trackerId, userId);
         trackerIdAndUserId.setStatus("disable");
         trackerUserListRepository.save(trackerIdAndUserId);
+    }
+
+    public ResponseEntity isTrackerAlive(int trackerId) {
+        Integer count = trackerRepository.countActiveTrackerByTrackerId(trackerId);
+        if (count == 0) {
+            return ResponseEntity.status(500)
+                    .build();
+        }
+        return ResponseEntity.status(200)
+                .build();
     }
 }

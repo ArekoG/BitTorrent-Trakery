@@ -1,6 +1,7 @@
 package psk.sob.controller;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import psk.sob.dto.Tracker;
 import psk.sob.dto.User;
@@ -42,5 +43,10 @@ public class TrackerController {
     @PostMapping("/trackers/{trackerId}/disable")
     public void disableTracker(@PathVariable int trackerId) {
         trackerService.disableTracker(trackerId);
+    }
+
+    @PostMapping("trackers/{trackerId}/is-alive")
+    public ResponseEntity isTrackerAlive(@PathVariable int trackerId) {
+        return trackerService.isTrackerAlive(trackerId);
     }
 }

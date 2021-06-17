@@ -13,4 +13,7 @@ public interface TrackerRepository extends JpaRepository<Tracker, Integer> {
             "join users u on ts.user_id  = u.user_id where u.login = :login and t.status = 'enable'",nativeQuery = true)
     List<Tracker>findAllByLoginAndStatus(@Param("login") String login);
 
+    @Query(value = "select count(*) from tracker t where t.status = 'enable' and t.tracker_id = :trackerId", nativeQuery = true)
+    Integer countActiveTrackerByTrackerId(@Param("trackerId") int trackerId);
+
 }
